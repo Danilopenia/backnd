@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    
+    box-sizing: content-box;
+}
+body{
+    background-color: rgb(255, 165, 165);
+}
+p{
+    color: aliceblue;
+}
+.footer{
+background-color: black;
+height: 300px;
+width: 100%;
+margin-top: 300px;
+}
+li{
+    color: aliceblue;
+}
+h3{
+    color: aliceblue;
+}

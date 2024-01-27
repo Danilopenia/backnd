@@ -1,0 +1,19 @@
+[
+  {
+    "id": "0897b22698065ed13543a47c",
+    "title": "cinturon",
+    "price": 125,
+    "stock": 50,
+    "capacity": 2,
+    "date": "2024-01-09T22:49:19.855Z"
+  },
+  {
+    "id": "5ccf86af113be079d6164638",
+    "title": "gorro",
+    "poster": "https://i.postimg.cc/HxdvTwqJ/events.jpg",
+    "price": "1000",
+    "stock": 50,
+    "capacity": 50,
+    "date": "2024-01-18T19:44:41.189Z"
+  }
+]
