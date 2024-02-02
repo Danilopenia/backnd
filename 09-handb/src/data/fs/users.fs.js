@@ -34,7 +34,8 @@ class UsersManager{
         id: crypto.randomBytes(12).toString("hex"),
         name: data.name,
         lastname: data.lastname,
-        gmail: data.gmail,
+        email: data.email,
+        photo: data.photo || "https://i.postimg.cc/HxdvTwqJ/events.jpg",
         date: data.date || new Date(),
       };
       this.users.push(user);

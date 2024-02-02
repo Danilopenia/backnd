@@ -28,8 +28,9 @@ class OrderManager{
         try {
       const order = {
         id: crypto.randomBytes(12).toString("hex"),
-        title:data.title,
+        name:data.name,
         price: data.price || 10,
+        poster: data.poster || "https://i.postimg.cc/HxdvTwqJ/events.jpg",
         stock: data.stock || 50,
         capacity: data.capacity || 50,
         date: data.date || new Date(),

@@ -32,7 +32,6 @@ class ProductsManager{
         poster: data.poster || "https://i.postimg.cc/HxdvTwqJ/events.jpg",
         price: data.price || 10,
         stock: data.stock || 50,
-        capacity: data.capacity || 50,
         date: data.date || new Date(),
       }; 
       this.products.push(product);

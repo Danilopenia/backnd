@@ -66,6 +66,28 @@ usersRouter.get("/", async (req, res) => {
   }
 });
 
+
+
+  
+usersRouter.use("/profile", (req, res, next)=>{
+  try {
+    const one = users.getUser("daee422ee0199c15f5ab4884");
+    console.log(one);
+    return res.render("profile", { one });
+  } catch (error) {
+    next(error)
+  }
+})
+
+//CHAT
+usersRouter.get("/chat", (req, res, next)=>{
+  try {
+    return res.render("chat", {})
+  } catch (error) {
+    next(error);
+  }
+});
+
   //DELETEUSER
   usersRouter.delete("/uid", async (req, res) => {
     try {
@@ -87,15 +109,18 @@ usersRouter.get("/", async (req, res) => {
     }
   });
 
-  
-usersRouter.use("/profile", (req, res, next)=>{
-  try {
-    const one = users.getUser("daee422ee0199c15f5ab4884");
-    console.log(one);
-    return res.render("profile", { one });
-  } catch (error) {
-    next(error)
-  }
-})
+  //CHAT
+  usersRouter.get("/:uid", (req, res, next) => {
+    try {
+      const { uid } = req.params
+      const one = users.readOne(uid);
+      if (!one) {
+        return res.render("notFound", { not: "user", title: "NOT FOUND" })
+      }
+      return res.render("profile", { profile: one, title: "PROFILE" });
+    } catch (error) {
+      next(error);
+    }
+  });
 
 export default usersRouter;
