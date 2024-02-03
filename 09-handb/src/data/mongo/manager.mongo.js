@@ -1,6 +1,6 @@
 import User from "./models/user.model.js"
 import Product from "./models/product.model.js"
-//import order from "./models/order.model.js"
+import Order from "./models/order.model.js"
 
 class MongoManager {
   constructor(model) {
@@ -55,7 +55,7 @@ class MongoManager {
   }
   async destroy(id) {
     try {
-        const one = await this.model.findByIdAndDelete(id)
+        const one = await this.model.findByIdAndDelete(id);
         if (!one) {
             const error = new Error("there isnt event");
             error.statusCode = 404;
@@ -70,6 +70,6 @@ class MongoManager {
 
 const users = new MongoManager(User);
 const products = new MongoManager(Product);
-//const orders = new MongoManager(Order);
-
-export { products, users} 
+const orders = new MongoManager(Order);
+//
+export { products, users, orders} 
