@@ -1,4 +1,4 @@
-import { model, Schema} from "mongoose";
+import { model, Schema } from "mongoose";
 
 const collection = "users";
 const schema = new Schema(
@@ -10,7 +10,6 @@ const schema = new Schema(
     photo: {
       type: String,
       default: "https://i.postimg.cc/HxdvTwqJ/events.jpg",
-    
     },
     age: { type: Number, default: 18 },
   },

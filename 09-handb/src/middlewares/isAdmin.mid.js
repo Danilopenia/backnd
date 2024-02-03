@@ -1,4 +1,4 @@
-export default (req,res,next)=>{
+/*export default (req,res,next)=>{
     try {
       const { role } = req.body
       if (role==="admin") {
@@ -11,4 +11,4 @@ export default (req,res,next)=>{
     } catch (error) {
       return next(error)
     }
-  }
+  }*/
