@@ -13,6 +13,7 @@ class MongoManager {
     } catch (error) {
       throw error;
     }
+
   }
   async read() {
     try {
