@@ -1,22 +1,23 @@
-import { model, Schema } from "mongoose";
+import { model, Schema, Types } from "mongoose";
 
 const collection = "orders";
 const schema = new Schema(
   {
-    name: { type: String, required: true },
-    price: { type: Number, default: 10 },
-    poster: {
+    user_id: { type: Types.ObjectId, required: true, ref: "users" },
+    product_id: { type: Types.ObjectId, required: true, ref: "products" },
+    quantity: { type: Number, default: 1 },
+    state: {
       type: String,
-      default: "https://i.postimg.cc/HxdvTwqJ/events.jpg",
+      enum: ["reserved", "paid", "delivered"],
+      default: "reserved"  
     },
-    stock: { type: Number, default: 50 },
-    capacity: { type: Number, default: 50 },
-    date: { type: Date, default: new Date() },
   },
   {
     timetamps: true,
   }
 );
+schema.pre('find', function(){this.populate("user_id", "-password -createdAt -updatedAt -__v")})
+schema.pre('find', function(){this.populate("product_id", "title price poster")})
 
 const Order = model(collection, schema);
 export default Order;
