@@ -6,16 +6,15 @@ import { Server } from "socket.io";
 import morgan from "morgan";
 import { engine } from "express-handlebars";
 //import products from "./src/data/fs/products.fs.js";
-import dbConnection from "./src/utils/db.js";
+import socketUtils from "./src/utils/socket.utils.js";
 
 import router from "./src/routers/index.router.js";
 import pathHandler from "./src/middlewares/pathHandler.mid.js";
 import errorHandler from "./src/middlewares/errorHandler.mid.js";
 import __dirname from "./utils.js";
-import socketUtils from "./src/utils/socket.utils.js";
-
+import dbConnection from "./src/utils/db.js";
 const server = express();
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 const ready = () => {
   console.log("server ready on port" + PORT);
   dbConnection();

@@ -2,7 +2,7 @@ import { model, Schema } from "mongoose";
 
 const collection = "products";
 const schema = new Schema({
-  title: { type: String, required: true },
+  title: { type: String, required: true, index: true},
   poster: {
     type: String,
     default: "https://i.postimg.cc/HxdvTwqJ/events.jpg",
