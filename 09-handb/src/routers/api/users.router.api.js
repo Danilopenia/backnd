@@ -20,7 +20,22 @@ usersRouter.post("/", async (req, res, next) => {
 
 usersRouter.get("/",async(req,res, next)=>{
     try {
-        const all = await users.read();
+
+      const orderAndPaginate = {
+        limit: req.query.limit || 20,
+        page: req.query.page || 1,
+        sort:{name: 1}
+      }
+      const filter = {}
+      if (req.query.email) {
+        filter.email = new RegExp(req.query.email.trim(), 'i')
+      }
+      if (req.query.email==="desc") {
+        orderAndPaginate.sort.name = 1
+      }else{
+        orderAndPaginate.sort.name = -1
+      }
+        const all = await users.read({filter, orderAndPaginate});
           return res.json({
             statusCode: 200,
             response: all,
@@ -41,51 +56,20 @@ usersRouter.get("/:uid",async(req,res, next)=>{
         return next(error)
       }
 });
-//usersRouter.put("/:uid"),async(req,res,next)=>{})
 usersRouter.put("/:uid", async (req, res, next) => {
   try {
-    const { uid, quantity } = req.params;
-    const response = await users.soldticket(quantity, uid);
-    if (typeof response === "number") {
-      return res.json({
-        statusCode: 200,
-        response: "capacity available: " + response,
-      });
-    } else if (response === "There isn't any product") {
-      return res.json({
-        statusCode: 404,
-        message: response,
-      });
-    } else {
-      return res.json({
-        statusCode: 400,
-        message: response,
-      });
-    }
-  } catch (error) {
-    return next (error)
-  }
-});
-usersRouter.put("/:uid", async (req, res, next) => {
-  try {
-    const opt = { new: true };
-    const one = await this.users.update(id, data, opt);
-    if (!one) {
-      return res.json({
-        statusCode: 200,
-        message: "there isnt product",
-      });
-    } else {
-      return res.json({
-        statusCode: 200,
-        one,
-      });
-    }
+    const { uid } = req.params;
+    const data = req.body;
+    const one = await users.update(uid, data);
+    return res.json({
+      statusCode: 200,
+      response: one,
+    });
   } catch (error) {
     return next(error);
   }
 });
-//usersRouter.delete("/:uid",async,(req,res,next)=>{})
+
 usersRouter.delete("/:uid", async (req, res, next) => {
   try {
       const { uid } = req.params;

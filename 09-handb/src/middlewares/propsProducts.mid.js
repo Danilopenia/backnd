@@ -1,4 +1,4 @@
-import propsProductsUtils from "../utils/propsProducts.utils.js";
+import propsProductsUtils from "../utils/props.Products.utils.js";
 
 function propsProducts(req, res, next) {
 /*   const { name, place } = req.body;
