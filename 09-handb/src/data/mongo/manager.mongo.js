@@ -2,7 +2,7 @@ import User from "./models/user.model.js";
 import Product from "./models/product.model.js";
 import Order from "./models/order.model.js";
 import notFoundOne from "../../utils/notFoundOne.utils.js";
-
+import { Types } from "mongoose";
 class MongoManager {
   constructor(model) {
     this.model = model;
@@ -40,7 +40,28 @@ class MongoManager {
       throw error;
     }
   }
- 
+ async reportBill(uid){
+  try {
+    const report = await this.model.aggregate([
+      {$match: { user_id: new Types.ObjectId(uid)}},
+     { $lookup:{
+      from: "products",
+      foreignField:"_id",
+      localField:"product_id",
+      as: "product_id"
+
+     }},
+     { $replaceRoot: {newRoot: { $mergeObjects:[{ $arrayElemAt:["$product_id", 0]}, "$$ROOT"]}}},
+     {$set: {subtotal:{$multiply:["$price", "$quantity"]}}},
+     { $group: { _id:"$user_id", total: {$sum: "$subtotal"} }},
+     { $project: {_id:0, user_id:"$_id", total: "$total", date: new Date(), currency: "USD"}},
+     //{ $merge: { into: "bills"}} crea una cuenta en mongo x cada click (podria ir cuando se ejecuta el pago)
+    ])
+    return report
+  } catch (error) {
+    throw error
+  }
+ }
 
   //READ BY EMAIL
   /*async readByEmail(obj) {

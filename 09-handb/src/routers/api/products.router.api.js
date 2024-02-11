@@ -19,11 +19,11 @@ productsRouter.post("/", /*isAdmin,*/ propsProducts, async (req, res, next) => {
     return next(error);
   }
 });
-/*productsRouter.get("/",async(req,res, next)=>{
+productsRouter.get("/",async(req,res, next)=>{
   try {
 
     const orderAndPaginate = {
-      limit: req.query.limit || 20,
+      limit: req.query.limit || 10,
       page: req.query.page || 1,
       sort:{price: 1}
     }
@@ -31,7 +31,7 @@ productsRouter.post("/", /*isAdmin,*/ propsProducts, async (req, res, next) => {
     if (req.query.title) {
       filter.title = new RegExp(req.query.title.trim(), 'i')
     }
-    if (req.query.price==="desc") {
+    if (req.query.title==="desc") {
       orderAndPaginate.sort.price = 1
     }else{
       orderAndPaginate.sort.price = -1
@@ -44,7 +44,7 @@ productsRouter.post("/", /*isAdmin,*/ propsProducts, async (req, res, next) => {
     } catch (error) {
      return next(error)
     }
-})*/
+})
 
 
 productsRouter.get("/", async (req, res, next) => {
