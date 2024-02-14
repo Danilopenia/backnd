@@ -20,8 +20,33 @@ ordersRouter.post("/",async (req, res, next) => {
 
     }
   });
+  ordersRouter.get("/",async(req,res, next)=>{
+    try {
 
-ordersRouter.get("/", async (req, res, next) => {
+      const orderAndPaginate = {
+        limit: req.query.limit || 10,
+        page: req.query.page || 1,
+        sort:{product_id: 1}
+      }
+      const filter = {}
+      if (req.query.user_id) {
+        filter.user_id= new RegExp(req.query.user_id.trim(), 'i')
+      }
+      if (req.query.user_id==="desc") {
+        orderAndPaginate.sort.product_id = 1
+      }else{
+        orderAndPaginate.sort.product_id = -1
+      }
+        const all = await orders.read({filter, orderAndPaginate});
+          return res.json({
+            statusCode: 200,
+            response: all,
+          });
+      } catch (error) {
+       return next(error)
+      }
+})
+/*ordersRouter.get("/", async (req, res, next) => {
     try {
       const all = await orders.read();
       return res.json({
@@ -31,14 +56,26 @@ ordersRouter.get("/", async (req, res, next) => {
     }catch (error){
       return next(error)
     }
-  });
-  ordersRouter.get("/:uid", async (req, res, next) => {
+  });*/
+  ordersRouter.get("/bills/:uid", async(req,res,next)=>{
+    try {
+      const { uid } = req.params
+      const report = await orders.reportBill(uid)
+      return res.json({
+        statusCode: 200,
+        response: report
+      })
+    } catch (error) {
+      return next(error)
+    }
+  })
+  /*ordersRouter.get("/:uid", async (req, res, next) => {
     try {
       const { uid } = req.params
       const filter = { user_id: uid}
       /*if (req.query.user_id) {
         filter = { user_id: req.query.user_id}
-      }*/
+      }
       const all = await orders.readOne({filter});
       //read va a necesitar un parametro para ordenar y filtrar
         return res.json({
@@ -48,7 +85,7 @@ ordersRouter.get("/", async (req, res, next) => {
     } catch (error) {
       return next(error)
     }
-  });
+  });/*
 /*ordersRouter.put("/:oid", async (req, res, next) => {
     try {
       const { oid, quantity } = req.params;
