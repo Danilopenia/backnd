@@ -28,6 +28,7 @@ productsRouter.get("/pag", async (req, res, next) => {
   }
 });
 
+
 viewsRouter.use("/products", productsRouter)
 viewsRouter.use("/users", usersRouter)
 viewsRouter.use("/orders", ordersRouter)

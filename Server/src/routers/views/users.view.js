@@ -67,7 +67,14 @@ usersRouter.get("/", async (req, res) => {
 });
 
 
-
+//LOGIN
+usersRouter.get("/login",(req,res,next)=>{
+  try {
+    return res.render("login")
+  } catch (error) {
+    next(error)
+  }
+})
   
 usersRouter.use("/profile", (req, res, next)=>{
   try {

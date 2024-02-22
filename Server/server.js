@@ -6,8 +6,8 @@ import { Server } from "socket.io";
 import morgan from "morgan";
 import { engine } from "express-handlebars";
 import cookieParser from "cookie-parser";
-import expressSession from "express-session"
-import sessionFileStore from "session-file-store"
+import expressSession from "express-session";
+import sessionFileStore from "session-file-store";
 import MongoStore from "connect-mongo";
 
 //import products from "./src/data/fs/products.fs.js";
@@ -50,10 +50,9 @@ server.engine("handlebars", engine());
 server.set("view engine", "handlebars");
 server.set("views", __dirname + "/src/views");
 
-
-const FileStore = sessionFileStore(expressSession)
+const FileStore = sessionFileStore(expressSession);
 //MIDDLEWARES
-server.use(cookieParser(process.env.SECRET_KEY))
+server.use(cookieParser(process.env.SECRET_KEY));
 //MEMORY STORE
 /*server.use(
   expressSession({
@@ -77,15 +76,17 @@ server.use(cookieParser(process.env.SECRET_KEY))
 }))*/
 
 //MONGO STORE
-server.use(expressSession({
-  secret: process.env.SECRET_KEY,
-  resave: true,
-  saveUnitialized: true,
-  store: new MongoStore({
-    ttl: 10,
-    mongoUrl: process.env.DB_LINK
+server.use(
+  expressSession({
+    secret: process.env.SECRET_KEY,
+    resave: true,
+    saveUnitialized: true,
+    store: new MongoStore({
+      ttl: 7 * 24 * 60 * 60,
+      mongoUrl: process.env.DB_LINK,
+    }),
   })
-}))
+);
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 server.use(express.static("public"));

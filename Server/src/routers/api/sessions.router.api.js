@@ -1,9 +1,27 @@
 import { Router } from "express";
+import { users } from "../../data/mongo/manager.mongo.js";
+import has8char from "../../middlewares/has8char.mid.js";
+import isValidPass from "../../middlewares/isValidPass.mid.js";
 
 const sessionRouter = Router();
 
-//login
-sessionRouter.post("/login", async (req, res, next) => {
+
+//register
+sessionRouter.post("/register", has8char, async(req,res,next)=>{
+  try {
+    const data = req.body
+    await users.create(data)
+    return res.json({
+      statusCode: 201,
+      message: "registered"
+    })
+  } catch (error) {
+    return next(error)
+  }
+  
+})
+//login//
+sessionRouter.post("/login", isValidPass ,async (req, res, next) => {
   try {
     const { email, password } = req.body;
     
