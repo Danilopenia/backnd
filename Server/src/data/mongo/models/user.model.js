@@ -9,6 +9,7 @@ const schema = new Schema(
     name: { type: String, required: true },
     lastname: { type: String },
     age: { type: Number, default: 18 },
+    role: { type: Number, default: 0 },
     photo: {
       type: String,
       default: "https://i.postimg.cc/HxdvTwqJ/events.jpg",

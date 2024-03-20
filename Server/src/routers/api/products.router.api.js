@@ -4,9 +4,10 @@ import { products } from "../../data/mongo/manager.mongo.js";
 import propsProducts from "../../middlewares/propsProducts.mid.js";
 import isAdmin from "../../middlewares/isAdmin.mid.js";
 import isCapacityOkMid from "../../middlewares/isCapacityOk.mid.js";
+import passCallBack from "../../middlewares/passCallBack.mid.js";
 const productsRouter = Router();
 
-productsRouter.post("/", isAdmin, propsProducts, async (req, res, next) => {
+productsRouter.post("/", passCallBack("jwt"), isAdmin, propsProducts, async (req, res, next) => {
   try {
     const data = req.body;
     const response = await products.create(data);
@@ -19,31 +20,31 @@ productsRouter.post("/", isAdmin, propsProducts, async (req, res, next) => {
     return next(error);
   }
 });
-productsRouter.get("/",async(req,res, next)=>{
+productsRouter.get("/", async (req, res, next) => {
   try {
 
     const orderAndPaginate = {
       limit: req.query.limit || 10,
       page: req.query.page || 1,
-      sort:{price: 1}
+      sort: { price: 1 }
     }
     const filter = {}
     if (req.query.title) {
       filter.title = new RegExp(req.query.title.trim(), 'i')
     }
-    if (req.query.title==="desc") {
+    if (req.query.title === "desc") {
       orderAndPaginate.sort.price = 1
-    }else{
+    } else {
       orderAndPaginate.sort.price = -1
     }
-      const all = await products.read({filter, orderAndPaginate});
-        return res.json({
-          statusCode: 200,
-          response: all,
-        });
-    } catch (error) {
-     return next(error)
-    }
+    const all = await products.read({ filter, orderAndPaginate });
+    return res.json({
+      statusCode: 200,
+      response: all,
+    });
+  } catch (error) {
+    return next(error)
+  }
 })
 
 
@@ -88,10 +89,10 @@ productsRouter.put("/:pid:quantity", isCapacityOkMid, async (req, res, next) => 
         message: response,
       });
     } else {*/////
-      return res.json({
-        statusCode: 200,
-        response: "capacity available:" + response,
-      });
+    return res.json({
+      statusCode: 200,
+      response: "capacity available:" + response,
+    });
     //}
   } catch (error) {
     return next(error);
@@ -121,11 +122,11 @@ productsRouter.delete("/:pid", async (req, res, next) => {
         message: "there isnt product",
       });
     } else {*/
-      return res.json({
-        statusCode: 200,
-        response,
-      });
-    
+    return res.json({
+      statusCode: 200,
+      response,
+    });
+
   } catch (error) {
     return next(error);
   }

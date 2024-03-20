@@ -18,7 +18,7 @@ const schema = new Schema(
   }
 );
 schema.pre('find', function(){this.populate("user_id", "-password -createdAt -updatedAt -__v")})
-schema.pre('find', function(){this.populate("product_id", "title price poster")})
+schema.pre('find', function(){this.populate("product_id", "title price photo")})
 schema.plugin(mongoosePaginate)
 const Order = model(collection, schema);
 export default Order;
