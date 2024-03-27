@@ -21,7 +21,7 @@ usersRouter.post("/", async (req, res, next) => {
 usersRouter.get("/",async(req,res, next)=>{
     try {
 
-      const orderAndPaginate = {
+      const options = {
         limit: req.query.limit || 10,
         page: req.query.page || 1,
         sort:{name: 1}
@@ -31,11 +31,11 @@ usersRouter.get("/",async(req,res, next)=>{
         filter.email = new RegExp(req.query.email.trim(), 'i')
       }
       if (req.query.email==="desc") {
-        orderAndPaginate.sort.name = 1
+        options.sort.name = 1
       }else{
-        orderAndPaginate.sort.name = -1
+        options.sort.name = -1
       }
-        const all = await users.read({filter, orderAndPaginate});
+        const all = await users.read({filter, options});
           return res.json({
             statusCode: 200,
             response: all,

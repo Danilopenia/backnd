@@ -35,7 +35,7 @@ ordersRouter.post("/",async (req, res, next) => {
   ordersRouter.get("/",async(req,res, next)=>{
     try {
 
-      const orderAndPaginate = {
+      const options = {
         limit: req.query.limit || 10,
         page: req.query.page || 1,
         sort:{product_id: 1}
@@ -45,11 +45,11 @@ ordersRouter.post("/",async (req, res, next) => {
         filter.user_id= new RegExp(req.query.user_id.trim(), 'i')
       }
       if (req.query.user_id==="desc") {
-        orderAndPaginate.sort.product_id = 1
+        options.sort.product_id = 1
       }else{
-        orderAndPaginate.sort.product_id = -1
+        options.sort.product_id = -1
       }
-        const all = await orders.read({filter, orderAndPaginate});
+        const all = await orders.read({filter, options});
           return res.json({
             statusCode: 200,
             response: all,

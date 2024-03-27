@@ -17,10 +17,10 @@ class MongoManager {
 
   }
 
-  async read({ filter, orderAndPaginate }) {
+  async read({ filter, options }) {
     try {
       const all = await this.model
-        .paginate(filter, orderAndPaginate)
+        .paginate(filter, options)
       console.log(all.docs);
       if (all.totalPages === 0) {
         const error = new Error("there aren't any document");

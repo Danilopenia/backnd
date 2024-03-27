@@ -1,80 +1,67 @@
-import { Router } from "express";
+import CustomRouter from "../CustomRouter.js";
 //import products from "../../data/fs/products.fs.js";
 import { products } from "../../data/mongo/manager.mongo.js";
-import propsProducts from "../../middlewares/propsProducts.mid.js";
+//import propsProducts from "../../middlewares/propsProducts.mid.js";
 import isAdmin from "../../middlewares/isAdmin.mid.js";
 import isCapacityOkMid from "../../middlewares/isCapacityOk.mid.js";
 import passCallBack from "../../middlewares/passCallBack.mid.js";
-const productsRouter = Router();
 
-productsRouter.post("/", passCallBack("jwt"), isAdmin, propsProducts, async (req, res, next) => {
+export default class ProductsRouter extends CustomRouter{
+  init(){
+this.create("/",["ADMIN", "PREM"], passCallBack("jwt"), isAdmin, /*propsProducts,*/ async (req, res, next) => {
   try {
     const data = req.body;
     const response = await products.create(data);
 
-    return res.json({
-      statusCode: 201,
-      response,
-    });
+    return res.success201(response)
   } catch (error) {
     return next(error);
   }
 });
-productsRouter.get("/", async (req, res, next) => {
+this.read("/", ["PUBLIC"],async (req, res, next) => {
   try {
 
-    const orderAndPaginate = {
+    const options = {
       limit: req.query.limit || 10,
       page: req.query.page || 1,
-      sort: { price: 1 }
+      sort: { title: 1 },
+      lean: true,
     }
     const filter = {}
     if (req.query.title) {
       filter.title = new RegExp(req.query.title.trim(), 'i')
     }
-    if (req.query.title === "desc") {
-      orderAndPaginate.sort.price = 1
-    } else {
-      orderAndPaginate.sort.price = -1
-    }
-    const all = await products.read({ filter, orderAndPaginate });
-    return res.json({
-      statusCode: 200,
-      response: all,
-    });
+    if (req.query.sort === "desc") {
+      options.sort.title = "desc";
+    } 
+    const all = await products.read({ filter, options });
+    return res.success200(all)
   } catch (error) {
     return next(error)
   }
 })
-
-
-productsRouter.get("/", async (req, res, next) => {
+/*this.read("/",["PUBLIC"], async (req, res, next) => {
   try {
     //const filter = { category: req.query.category}
     //const order = { name: req.query.order}
     const all = await products.read({});
     //read va a necesitar un parametro para ordenar y filtrar
-    return res.json({
-      statusCode: 200,
-      response: all,
-    });
+    return res.success200(one)
   } catch (error) {
     return next(error);
   }
-});
-productsRouter.get("/:pid", async (req, res, next) => {
+});*/
+
+this.read("/:pid",["PUBLIC"], async (req, res, next) => {
   try {
     const { pid } = req.params;
     const one = await products.readOne(pid);
-    return res.json({
-      statusCode: 200,
-      response: one,
-    });
+    return res.success200(one)
   } catch (error) {
     return next(error);
   }
 });
-productsRouter.put("/:pid:quantity", isCapacityOkMid, async (req, res, next) => {
+/*this.read("/:pid:quantity",["PUBLIC"], isCapacityOkMid, async (req, res, next) => {
   try {
     const { pid, quantity } = req.params;
     const response = await products.soldticket(quantity, pid);
@@ -89,30 +76,24 @@ productsRouter.put("/:pid:quantity", isCapacityOkMid, async (req, res, next) => 
         message: response,
       });
     } else {*/////
-    return res.json({
-      statusCode: 200,
-      response: "capacity available:" + response,
-    });
+    /*return res.success200(response)
     //}
   } catch (error) {
     return next(error);
   }
-});
-productsRouter.put("/:pid", async (req, res, next) => {
+});*/
+this.update("/:pid",["PREM", "ADMIN"] ,async (req, res, next) => {
   try {
     const { pid } = req.params;
     const data = req.body;
-    const one = await products.update(pid, data);
-    return res.json({
-      statusCode: 200,
-      response: one,
-    });
+    const response = await products.update(pid, data);
+    return res.success200(response)
   } catch (error) {
     return next(error);
   }
 });
 
-productsRouter.delete("/:pid", async (req, res, next) => {
+this.destroy("/:pid",["PREM", "ADMIN"], async (req, res, next) => {
   try {
     const { pid } = req.params;
     const response = await products.destroy(pid);
@@ -122,14 +103,16 @@ productsRouter.delete("/:pid", async (req, res, next) => {
         message: "there isnt product",
       });
     } else {*/
-    return res.json({
-      statusCode: 200,
-      response,
-    });
+    return res.success200(response)
 
   } catch (error) {
     return next(error);
   }
 });
 
-export default productsRouter;
+  }
+}
+
+
+
+

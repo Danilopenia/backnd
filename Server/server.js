@@ -13,7 +13,7 @@ import MongoStore from "connect-mongo";
 //import products from "./src/data/fs/products.fs.js";
 import socketUtils from "./src/utils/socket.utils.js";
 
-import router from "./src/routers/index.router.js";
+import IndexRouter from "./src/routers/index.router.js";
 import pathHandler from "./src/middlewares/pathHandler.mid.js";
 import errorHandler from "./src/middlewares/errorHandler.mid.js";
 import __dirname from "./utils.js";
@@ -95,7 +95,9 @@ server.use(morgan("dev"));
 //routers
 //enrutadores
 //catch de error
-server.use("/", router);
+
+const router = new IndexRouter()
+server.use("/", router.getRouter())
 server.use(errorHandler);
 server.use(pathHandler);
 
