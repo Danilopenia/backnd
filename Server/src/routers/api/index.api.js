@@ -1,19 +1,19 @@
-import CustomRouter from "../CustomRouter.js"
-import usersRouter from "./users.router.api.js";
-import ProductsRouter from "./products.router.api.js";
-import ordersRouter from "./orders.router.api.js";
-//import cookiesRouter from "./cookies.router.api.js";
-import sessionRouter from "./sessions.router.api.js";
+import CustomRouter from '../CustomRouter.js';
+import ClothesRouter from './clothes.router.api.js';
+import SessionsRouter from './sessions.router.api.js';
+import CategoriesRouter from './categories.router.api.js';
+import SizesRouter  from "./sizes.router.api.js";
 
-//import passCallBackMid from "../../middlewares/passCallBack.mid.js";
-const product = new ProductsRouter()
+const session = new SessionsRouter();
+const clothes = new ClothesRouter();
+const categories = new CategoriesRouter();
+const sizes = new SizesRouter();
 
-
-export default class ApiRouter extends CustomRouter{
-init(){
-    this.router.use("/users", usersRouter)
-    this.router.use("/products", product.getRouter())
-    this.router.use("/orders", ordersRouter)
-    this.router.use("/sessions", sessionRouter)
-}
+export default class ApiRouter extends CustomRouter {
+  init() {
+    this.use('/sessions', session.getRouter());
+    this.use('/clothes', clothes.getRouter());
+    this.use('/categories', categories.getRouter());
+    this.use("/sizes", sizes.getRouter())
+  }
 }

@@ -1,24 +1,29 @@
 import { model, Schema, Types } from "mongoose";
-import mongoosePaginate from "mongoose-paginate-v2"
+import mongoosePaginate from "mongoose-paginate-v2";
 
 const collection = "orders";
 const schema = new Schema(
   {
     user_id: { type: Types.ObjectId, required: true, ref: "users" },
-    product_id: { type: Types.ObjectId, required: true, ref: "products" },
+    clothe_id: { type: Types.ObjectId, required: true, ref: "clothes" },
     quantity: { type: Number, default: 1 },
     state: {
       type: String,
       enum: ["reserved", "paid", "delivered"],
-      default: "reserved"  
+      default: "reserved",
     },
   },
-  {
-    timetamps: true,
-  }
+  { timestamps: true }
 );
-schema.pre('find', function(){this.populate("user_id", "-password -createdAt -updatedAt -__v")})
-schema.pre('find', function(){this.populate("product_id", "title price photo")})
-schema.plugin(mongoosePaginate)
+
+schema.plugin(mongoosePaginate);
+
+schema.pre("find", function () {
+  this.populate("user_id", "-createdAt -updatedAt -__v");
+});
+schema.pre("find", function () {
+  this.populate("clothe_id", "-createdAt -updatedAt -__v");
+});
+
 const Order = model(collection, schema);
 export default Order;
