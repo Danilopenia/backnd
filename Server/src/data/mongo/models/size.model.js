@@ -1,4 +1,4 @@
-import { model, Schema } from "mongoose";
+/*import { model, Schema } from "mongoose";
 import mongoosePaginate from "mongoose-paginate-v2";
 
 const collection = "sizes";
@@ -13,4 +13,4 @@ const schema = new Schema(
 schema.plugin(mongoosePaginate);
 
 const Size = model(collection, schema);
-export default Size;
+export default Size;*/

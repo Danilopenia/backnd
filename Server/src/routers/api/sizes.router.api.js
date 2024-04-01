@@ -1,4 +1,4 @@
-import CustomRouter from "../CustomRouter.js";
+/*import CustomRouter from "../CustomRouter.js";
 import { sizes } from "../../data/mongo/manager.mongo.js";
 
 class SizeRouter extends CustomRouter {
@@ -55,4 +55,4 @@ class SizeRouter extends CustomRouter {
   }
 }
 
-export default SizeRouter;
+export default SizeRouter;*/

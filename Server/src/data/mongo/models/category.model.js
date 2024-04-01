@@ -1,4 +1,4 @@
-import { model, Schema } from "mongoose";
+/*import { model, Schema } from "mongoose";
 import mongoosePaginate from "mongoose-paginate-v2";
 
 const collection = "categories";
@@ -16,4 +16,4 @@ const schema = new Schema(
 schema.plugin(mongoosePaginate);
 
 const Category = model(collection, schema);
-export default Category;
+export default Category;*/

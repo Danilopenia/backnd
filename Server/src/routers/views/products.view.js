@@ -15,6 +15,14 @@ productsRouter.get("/new", passCallBack("jwt"), isAdmin, (req, res, next) => {
 });
 
 
+productsRouter.get("/form", passCallBack("jwt"), isAdmin, (req, res, next) => {
+  try {
+    return res.render("form", { title: "CREATE MOVIE" });
+  } catch (error) {
+    next(error);
+  }
+});
+
 productsRouter.get("/:pid", async (req, res, next) => {
   try {
     const { pid } = req.params;
@@ -24,5 +32,6 @@ productsRouter.get("/:pid", async (req, res, next) => {
     next(error);
   }
 });
+
 
 export default productsRouter

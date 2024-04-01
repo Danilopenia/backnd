@@ -3,7 +3,7 @@ import CustomRouter from "../CustomRouter.js";
 import { products } from "../../data/mongo/manager.mongo.js";
 //import propsProducts from "../../middlewares/propsProducts.mid.js";
 import isAdmin from "../../middlewares/isAdmin.mid.js";
-import isCapacityOkMid from "../../middlewares/isCapacityOk.mid.js";
+//import isCapacityOkMid from "../../middlewares/isCapacityOk.mid.js";
 import passCallBack from "../../middlewares/passCallBack.mid.js";
 
 export default class ProductsRouter extends CustomRouter{

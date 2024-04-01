@@ -12,7 +12,6 @@ export default class CustomRouter {
   }
   init() {}
   applyCbs(cbs) {
-    //cbs es un array de callbacks (por ejemplo todos los middlewares que necesita el endpoint /api/sessions/signout)
     return cbs.map((each) => async (...params) => {
       try {
         await each.apply(this, params);
@@ -25,15 +24,20 @@ export default class CustomRouter {
     });
   }
   responses = (req, res, next) => {
-    res.success200 = (payload) =>
-      res.json({ statusCode: 200, response: payload });
-    res.success201 = (payload) =>
-      res.json({ statusCode: 201, response: payload });
-    res.error400 = (message) => res.json({ statusCode: 400, message });
-    res.error401 = () => res.json({ statusCode: 401, message: "Bad auth!" });
-    res.error403 = () => res.json({ statusCode: 403, message: "Forbidden!" });
-    res.error404 = () => res.json({ statusCode: 404, message: "Not found!" });
-    return next();
+    try {
+      res.message = (message) => res.json({ statusCode: 200, message });
+      res.success200 = (payload) =>
+        res.json({ statusCode: 200, response: payload });
+      res.success201 = (payload) =>
+        res.json({ statusCode: 201, response: payload });
+      res.error400 = (message) => res.json({ statusCode: 400, message });
+      res.error401 = () => res.json({ statusCode: 401, message: "Bad auth!" });
+      res.error403 = () => res.json({ statusCode: 403, message: "Forbidden!" });
+      res.error404 = () => res.json({ statusCode: 404, message: "Not found!" });
+      return next();
+    } catch (error) {
+      return next(error);
+    }
   };
   policies = (arrayOfPolicies) => async (req, res, next) => {
     try {
@@ -57,20 +61,40 @@ export default class CustomRouter {
         }
       }
     } catch (error) {
-      return next(error)
+      return next(error);
     }
   };
   create(path, policies, ...cbs) {
-    this.router.post(path, this.responses, this.policies(policies), this.applyCbs(cbs));
+    this.router.post(
+      path,
+      this.responses,
+      this.policies(policies),
+      this.applyCbs(cbs)
+    );
   }
   read(path, policies, ...cbs) {
-    this.router.get(path, this.responses, this.policies(policies), this.applyCbs(cbs));
+    this.router.get(
+      path,
+      this.responses,
+      this.policies(policies),
+      this.applyCbs(cbs)
+    );
   }
   update(path, policies, ...cbs) {
-    this.router.put(path, this.responses, this.policies(policies), this.applyCbs(cbs));
+    this.router.put(
+      path,
+      this.responses,
+      this.policies(policies),
+      this.applyCbs(cbs)
+    );
   }
   destroy(path, policies, ...cbs) {
-    this.router.delete(path, this.responses, this.policies(policies), this.applyCbs(cbs));
+    this.router.delete(
+      path,
+      this.responses,
+      this.policies(policies),
+      this.applyCbs(cbs)
+    );
   }
   use(path, ...cbs) {
     this.router.use(path, this.responses, this.applyCbs(cbs));

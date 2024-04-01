@@ -9,6 +9,7 @@ import cookieParser from "cookie-parser";
 import expressSession from "express-session";
 import sessionFileStore from "session-file-store";
 import MongoStore from "connect-mongo";
+import args from "./src/utils/args.util.js"
 
 //import products from "./src/data/fs/products.fs.js";
 import socketUtils from "./src/utils/socket.utils.js";
@@ -102,3 +103,5 @@ server.use(errorHandler);
 server.use(pathHandler);
 
 export { socketServer };
+
+console.log(args);

@@ -1,1 +1,0 @@
-console.log("esta es la p principal");

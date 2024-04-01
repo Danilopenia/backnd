@@ -1,4 +1,4 @@
-import CustomRouter from '../CustomRouter.js';
+/*import CustomRouter from '../CustomRouter.js';
 
 import { categories } from '../../data/mongo/manager.mongo.js';
 
@@ -46,4 +46,4 @@ export default class CategoriesRouter extends CustomRouter {
       }
     });
   }
-}
+}*/

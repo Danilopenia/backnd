@@ -1,4 +1,4 @@
-import { model, Schema, Types } from "mongoose";
+/*import { model, Schema, Types } from "mongoose";
 import mongoosePaginate from "mongoose-paginate-v2";
 
 const collection = "clothes";
@@ -26,4 +26,4 @@ schema.pre("find", function () {
 });
 
 const Clothe = model(collection, schema);
-export default Clothe; 
+export default Clothe; */

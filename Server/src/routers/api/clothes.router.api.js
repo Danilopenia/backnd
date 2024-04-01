@@ -1,5 +1,5 @@
-import CustomRouter from "../CustomRouter.js";
-import { clothes } from "../../data/mongo/manager.mongo.js";
+/*import CustomRouter from "../CustomRouter.js";
+//import { clothes } from "../../data/mongo/manager.mongo.js";
 
 class ClothesRouter extends CustomRouter {
   init() {
@@ -19,4 +19,4 @@ class ClothesRouter extends CustomRouter {
   }
 }
 
-export default ClothesRouter;
+export default ClothesRouter;*/
