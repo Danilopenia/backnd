@@ -1,25 +1,18 @@
 import { socketServer } from "../../server.js";
-import users from "../data/fs/users.fs.js";
-import propsUsersUtils from "./props.Users.utils.js";
-import propsProductsUtils from "./props.Products.utils.js"
-
-
+import events from "../data/fs/products.fs.js";
+import propsProductsUtils from "./props.Products.utils.js";
 
 export default (socket) => {
-    console.log("connected id:" + socket.id);
-     socket.emit("users", users.getUser());
-       socket.on("newUser", async(data)=>{ 
-        try {
-           propsUsersUtils(data);
-           await users.createUser(data)
-           socketServer.emit("products", users.getUser());
-        } catch (error) {
-            console.log(error);
-        }
-    });}
-    /*socket.emit("all",messages);
-    socket.on("new chat", data=>{
-        messages.push(data)
-        socketServer.emit("all", messages)
-    });
-}*/
+  console.log("client " + socket.id + " connected");
+  socket.emit("movies", products.readProducts());
+  socket.on("newMovie", async (data) => {
+    try {
+      propsProductsUtils(data);
+      await products.createProduct(data);
+      socketServer.emit("movies", events.readProduct());
+    } catch (error) {
+      console.log(error);
+      //emitir al cliente un mensaje de alerta
+    }
+  });
+};
