@@ -1,113 +1,23 @@
-import { Router } from "express";
-//import users from "../../data/fs/users.fs.js";
-import { users } from "../../data/mongo/manager.mongo.js";
-const usersRouter = Router()
+import CustomRouter from "../CustomRouter.js";
+import {
+  create,
+  read,
+  readOne,
+  stats,
+  update,
+  destroy,
+} from "../../controllers/users.controller.js";
 
-usersRouter.post("/", async (req, res, next) => {
-  try {
-    const data = req.body;
-    const response = await users.create(data);
-    
-      return res.json({
-        statusCode: 201,
-        response,
-      });
-  } catch (error) {
-  return next(error)
-
+class UsersRouter extends CustomRouter {
+  init() {
+    this.create("/", ["PUBLIC"], create);
+    this.read("/", ["ADMIN"], read);
+    this.read("/stats", ["USER", "PREM"], stats);
+    this.read("/:uid", ["USER", "PREM"], readOne);
+    this.update("/:uid", ["USER", "PREM"], update);
+    this.destroy("/:uid", ["USER", "PREM"], destroy);
   }
-});
+}
 
-usersRouter.get("/",async(req,res, next)=>{
-    try {
-
-      const orderAndPaginate = {
-        limit: req.query.limit || 10,
-        page: req.query.page || 1,
-        sort:{name: 1}
-      }
-      const filter = {}
-      if (req.query.email) {
-        filter.email = new RegExp(req.query.email.trim(), 'i')
-      }
-      if (req.query.email==="desc") {
-        orderAndPaginate.sort.name = 1
-      }else{
-        orderAndPaginate.sort.name = -1
-      }
-        const all = await users.read({filter, orderAndPaginate});
-          return res.json({
-            statusCode: 200,
-            response: all,
-          });
-      } catch (error) {
-       return next(error)
-      }
-})
-usersRouter.get("/:uid",async(req,res, next)=>{
-    try {
-        const { uid } = req.params;
-        const one = await users.readOne(uid);
-          return res.json({
-            statusCode: 200,
-            response: one,
-          });
-      } catch (error) {
-        return next(error)
-      }
-});
-usersRouter.get('/:email', async (req, res, next) => {
-  try {
-    const { email } = req.params;
-    const user = await users.readByEmail(email);
-
-    if (user) {
-      return res.json({
-        statusCode: 200,
-        response: user,
-      });
-    } else {
-      return res.json({
-        statusCode: 404,
-        message: 'Usuario no encontrado',
-      });
-    }
-  } catch (error) {
-    return next(error);
-  }
-});
-usersRouter.put("/:uid", async (req, res, next) => {
-  try {
-    const { uid } = req.params;
-    const data = req.body;
-    const one = await users.update(uid, data);
-    return res.json({
-      statusCode: 200,
-      response: one,
-    });
-  } catch (error) {
-    return next(error);
-  }
-});
-
-usersRouter.delete("/:uid", async (req, res, next) => {
-  try {
-      const { uid } = req.params;
-      const one = await users.destroy(uid);
-      if (!one) {
-        return res.json({
-          statusCode: 200,
-          message: "there isnt product",
-        });
-      }else {
-        return res.json({
-          statusCode: 200,
-          one,
-        });
-      }
-    } catch (error) {
-      return next(error)
-      }
-    });
-
-export default usersRouter;
+const usersRouter = new UsersRouter();
+export default usersRouter.getRouter();

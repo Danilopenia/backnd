@@ -3,12 +3,12 @@ class ProductManager {
   
     id;
     title;
-    photo;
+    poster;
     price;
     stock;
   
     create(data) {
-      const propsList = ["title", "photo", "price", "stock"];
+      const propsList = ["title", "poster", "price", "stock"];
       const keyList = Object.keys(data);
   
       const missingProps = [];
@@ -66,7 +66,7 @@ class ProductManager {
   
   ProdManager.create({
     title: "el mundo de tomas 2",
-    photo: "https://i.pravatar.cc/300",
+    poster: "https://i.pravatar.cc/300",
     price: 200,
   });
   

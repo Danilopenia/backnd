@@ -14,8 +14,8 @@
   <section id='movies' class='d-flex flex-wrap justify-content-evenly w-100 mt-2 mb-4'>
 
     {{#each products}}
-      <a href='/products/{{this._id}}' class='card m-2 anchor' style='width: 360px'>
-        <img src='{{this.photo}}' style='height: 240px' class='card-img-top object-fit-cover' alt='{{this.title}}' />
+      <a href="/products/{{this._id}}" class='card m-2 anchor' style='width: 360px'>
+        <img src="{{this.photo}}" style='height: 240px' class='card-img-top object-fit-cover' alt="{{this.title}}" />
         <h5 class='p-2 text-center card-title'>{{this.title}}</h5>
       </a>
     {{/each}}
