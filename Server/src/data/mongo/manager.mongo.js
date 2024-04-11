@@ -36,16 +36,16 @@ class MongoManager {
         { $match: { user_id: new Types.ObjectId(uid) } },
         {
           $lookup: {
-            from: "events",
+            from: "products",
             foreignField: "_id",
-            localField: "event_id",
-            as: "event_id",
+            localField: "product_id",
+            as: "product_id",
           },
         },
         {
           $replaceRoot: {
             newRoot: {
-              $mergeObjects: [{ $arrayElemAt: ["$event_id", 0] }, "$$ROOT"],
+              $mergeObjects: [{ $arrayElemAt: ["$product_id", 0] }, "$$ROOT"],
             },
           },
         },

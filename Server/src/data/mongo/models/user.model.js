@@ -10,7 +10,7 @@ const schema = new Schema(
     lastname: { type: String },
     age: { type: Number, default: 18 },
     role: { type: Number, default: 0 },
-    photo: {
+    poster: {
       type: String,
       default: "https://i.postimg.cc/HxdvTwqJ/events.jpg",
     },

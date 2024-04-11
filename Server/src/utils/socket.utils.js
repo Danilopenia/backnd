@@ -9,7 +9,7 @@ export default (socket) => {
     try {
       propsProductsUtils(data);
       await products.createProduct(data);
-      socketServer.emit("movies", events.readProduct());
+      socketServer.emit("movies", products.readProduct());
     } catch (error) {
       console.log(error);
       //emitir al cliente un mensaje de alerta
