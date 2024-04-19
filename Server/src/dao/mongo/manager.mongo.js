@@ -1,8 +1,5 @@
-import User from "./models/user.model.js";
-import Product from "./models/product.model.js";
-import Order from "./models/order.model.js";
-import Comment from "./models/comment.model.js";
-import notFoundOne from "../../utils/notFoundOne.utils.js";
+
+/*import notFoundOne from "../../utils/notFoundOne.utils.js";
 import { Types } from "mongoose";
 
 class MongoManager {
@@ -21,7 +18,7 @@ class MongoManager {
     try {
       const all = await this.model.paginate(filter, options);
       if (all.totalDocs === 0) {
-        const error = new Error("There aren't any document");
+        const error = new Error("NOT FOUND");
         error.statusCode = 404;
         throw error;
       }
@@ -118,10 +115,62 @@ class MongoManager {
   }
 }
 
-const users = new MongoManager(User);
-const products = new MongoManager(Product);
-const orders = new MongoManager(Order);
-const comments = new MongoManager(Comment);
+export default MongoManager;*/
 
-export { users, products, orders, comments };
+
+class MongoManager {
+  constructor(model) {
+    this.model = model;
+  }
+  async create(data) {
+    try {
+      const one = await this.model.create(data);
+      return one;
+    } catch (error) {
+      throw error;
+    }
+  }
+  async read({ filter, options }) {
+    try {
+      const all = await this.model.paginate(filter, options);
+      return all;
+    } catch (error) {
+      throw error;
+    }
+  }
+  async readOne(id) {
+    try {
+      const one = await this.model.findById(id);
+      return one;
+    } catch (error) {
+      throw error;
+    }
+  }
+  async readByEmail(email) {
+    try {
+      const one = await this.model.findOne({ email });
+      return one;
+    } catch (error) {
+      throw error;
+    }
+  }
+  async update(id, data) {
+    try {
+      const opts = { new: true };
+      const one = await this.model.findByIdAndUpdate(id, data, opts);
+      return one;
+    } catch (error) {
+      throw error;
+    }
+  }
+  async destroy(id) {
+    try {
+      const one = await this.model.findByIdAndDelete(id);
+      return one;
+    } catch (error) {
+      throw error;
+    }
+  }
+}
+
 export default MongoManager;
