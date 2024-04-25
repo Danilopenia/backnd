@@ -1,5 +1,5 @@
 import NoteDTO from "../dto/note.dto.js";
-import dao from "../dao/index.dao.js";
+import dao from "../data/index.factory.js";
 
 const { notes } = dao;
 

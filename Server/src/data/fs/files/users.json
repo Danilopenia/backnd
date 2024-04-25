@@ -1,0 +1,57 @@
+[
+  {
+    "_id": "9fdbfb6f21c2c73f5e3369ec",
+    "email": "marcianito@email.com",
+    "password": "$2b$10$0v8isZpvR9W7oNtCxxyF0e5LxFKMgR/v1w6QS.O4N5/4YpQeV.P0u",
+    "name": "marcianito",
+    "photo": "https://i.postimg.cc/wTgNFWhR/profile.png",
+    "age": 18,
+    "role": 0,
+    "updatedAt": "2024-04-24T18:35:44.784Z",
+    "createdAt": "2024-04-24T18:35:44.784Z"
+  },
+  {
+    "_id": "55aad76b100f7f1d03422302",
+    "email": "danilopenia14@gmail.com",
+    "password": "$2b$10$MWOr2IjfeYo.KcCVp/zqluMi2QfAni2c31DiXum6RSWIHN3/daIOO",
+    "name": "danilo",
+    "photo": "https://i.postimg.cc/wTgNFWhR/profile.png",
+    "age": 18,
+    "role": 0,
+    "updatedAt": "2024-04-24T18:56:26.997Z",
+    "createdAt": "2024-04-24T18:56:26.997Z"
+  },
+  {
+    "_id": "3e107fecab2f912f964c2d81",
+    "name": "dao",
+    "email": "openia14@gmail.com",
+    "password": "$2b$10$aibEsbEXnNoxLWSD7Klt5ugmef1c1NQBvwIIU.AN9nIFuS.qY.r9e",
+    "role": "USER",
+    "verified": false,
+    "verifiedCode": "IC9AdTq0orl3SyZ0",
+    "createdAt": "2024-04-24T18:58:18.883Z",
+    "updatedAt": "2024-04-24T18:58:18.883Z"
+  },
+  {
+    "_id": "108e172a3ef812d6dec90b50",
+    "name": "danielSan",
+    "email": "danilopenia13@gmail.com",
+    "password": "$2b$10$eHok7LJqy/JR1N6NKspaieYiP6r8fsOAgg5WHbPPxnJdwFtvmFPiq",
+    "role": "USER",
+    "verified": false,
+    "verifiedCode": "pFq2f7W/IJiVP0zD",
+    "createdAt": "2024-04-24T19:02:47.604Z",
+    "updatedAt": "2024-04-24T19:02:47.604Z"
+  },
+  {
+    "_id": "20c80a67c1c6e0f6e89b7170",
+    "name": "d",
+    "email": "da@gmail.com",
+    "password": "$2b$10$4qsWVymaoWlMfWCay6IkZOYG6sAWi9/i2mU4nO6nSetR2WEqUrVCq",
+    "role": "USER",
+    "verified": false,
+    "verifiedCode": "5VEUdNBMk0tngxIa",
+    "createdAt": "2024-04-24T19:04:35.383Z",
+    "updatedAt": "2024-04-24T19:04:35.383Z"
+  }
+]

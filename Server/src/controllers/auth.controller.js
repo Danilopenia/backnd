@@ -5,6 +5,8 @@ class AuthController {
     this.service = service;
   }
   register = async (req, res, next) => {
+    const { email, name, verifiedCode } = req.user;
+    await this.service.register({ email, name, verifiedCode });
     try {
       return res.json({
         statusCode: 201,
@@ -39,8 +41,28 @@ class AuthController {
       return next(error);
     }
   };
+  verifyAccount = async (req, res, next) => {
+    try {
+      const { email, verifiedCode } = req.body; //<-DESESTRUCTURAR
+      const user = await service.readByEmail(email);//POR QUE NO ANDA LA VERIFICACION? (CLASE 30/1:23:00)
+      if (user.verifiedCode === verifiedCode) {
+        await service.update(user._id, { verified: true });
+        return res.json({
+          statusCode: 200,
+          message: "Verified user!",
+        });
+      } else {
+        return res.json({
+          statusCode: 400,
+          message: "Invalid verified token!",
+        });
+      }
+    } catch (error) {
+      return next(error);
+    }
+  };
 }
 
 const controller = new AuthController();
-const { register, login, signout } = controller;
-export { register, login, signout };
+const { register, login, signout, verifyAccount } = controller;
+export { register, login, signout, verifyAccount };

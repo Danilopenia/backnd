@@ -27,13 +27,15 @@
     "moongose": "1.0.0",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.13",
     "passport": "^0.7.0",
     "passport-github2": "0.1.12",
     "passport-google-oauth2": "0.2.0",
     "passport-jwt": "4.0.1",
     "passport-local": "1.0.0",
     "session-file-store": "^1.5.0",
-    "socket.io": "^4.7.3"
+    "socket.io": "^4.7.3",
+    "twilio": "^5.0.4"
   },
   "devDependencies": {
     "nodemon": "^3.0.2"

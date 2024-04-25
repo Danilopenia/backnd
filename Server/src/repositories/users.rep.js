@@ -1,5 +1,5 @@
 import UserDTO from "../dto/user.dto.js";
-import dao from "../dao/index.dao.js";
+import dao from "../data/index.factory.js";
 
 const { users } = dao;
 
