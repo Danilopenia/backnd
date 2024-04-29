@@ -71,10 +71,14 @@ export default apiRouter.getRouter();
 import { Router } from "express";
 import notesRouter from "./notes.router.api.js";
 import authRouter from "./auth.router.api.js";
+import usersRouter from "./users.router.api.js"
+import productsRouter from "./products.router.api.js"
 
 const apiRouter = Router();
 
-apiRouter.use("/notes", notesRouter);
+//apiRouter.use("/notes", notesRouter);
 apiRouter.use("/auth", authRouter);
+apiRouter.use("/users", usersRouter);
+apiRouter.use("/products", productsRouter);
 
 export default apiRouter;
