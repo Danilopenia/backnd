@@ -1,6 +1,6 @@
 import CustomRouter from "../CustomRouter.js";
-import passport from "../../middlewares/passport.mid.js";
-import passCallBack from "../../middlewares/passCallBack.mid.js";
+import passport from "../../middlewares/passport.js";
+import passCallBack from "../../middlewares/passCallBack.js";
 import {
   register,
   login,

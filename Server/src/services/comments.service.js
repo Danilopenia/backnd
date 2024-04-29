@@ -1,4 +1,4 @@
-import { comments } from "../data/mongo/comments.mongo.js";
+import  comments  from "../data/mongo/comments.mongo.js";
 
 class CommentsService {
   constructor() {

@@ -18,7 +18,7 @@ class MongoManager {
     try {
       const all = await this.model.paginate(filter, options);
       if (all.totalDocs === 0) {
-        CustomError.new(errors.notFound);
+       CustomError.new(errors.notFound);
       }
       return all;
     } catch (error) {
