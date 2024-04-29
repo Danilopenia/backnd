@@ -15,4 +15,4 @@ class ProductDTO {
   }
 }
 
-export default EventDTO;
+export default ProductDTO;

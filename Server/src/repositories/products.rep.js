@@ -1,7 +1,8 @@
 import ProductDTO from "../dto/product.dto.js";
 import dao from "../data/index.factory.js";
+import products from "../data/mongo/products.mongo.js";
 
-const { users } = dao;
+//const { products } = dao;
 
 class ProductsRep {
   constructor() {
