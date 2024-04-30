@@ -11,7 +11,8 @@ import errors from "../utils/errors/errors.js";
 import env from "../utils/env.util.js"
 import repository from "../repositories/users.rep.js";
 const { users } = dao;
-const { GOOGLE_ID, GOOGLE_CLIENT, GITHUB_ID, GITHUB_CLIENT, SECRET } = env;
+const { GOOGLE_ID, GOOGLE_CLIENT, GITHUB_ID, GITHUB_CLIENT, SECRET } = 
+process.env;
 
 passport.use(
   "register",
@@ -19,25 +20,24 @@ passport.use(
     { passReqToCallback: true, usernameField: "email" },
     async (req, email, password, done) => {
       try {
-        //let one = await users.readByEmail(email);
-        let one = await repository.readByEmail(email);
-        //if (!one) {
-          //
-          if (one) {
+        let one = await users.readByEmail(email);
+        
+        if (!one) {
+         
+         //  if (one) {
             //
-          //let data = req.body;
-          //data.password = createHash(password);
-          //data = new UserDTO(data);
-          //let user = await users.create(data);
-          //return done(null, user);
-          return done(null, false,{statusCode:401});
+          let data = req.body;
+          data.password = createHash(password);
+          data = new UserDTO(data);
+          let user = await users.create(data);
+          return done(null, user);
+          //return done(null, false,{statusCode:401});
           //
 
         } else {
           //return done(null, false, errors.register);
        //
-        const user = await repository.create(req.body)
-        return done(null, user)
+        return done(null, false, errors.register)
        //
         }
       } catch (error) {

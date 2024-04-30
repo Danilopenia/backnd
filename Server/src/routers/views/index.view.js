@@ -12,8 +12,11 @@ export class ViewsRouter extends CustomRouter {
     this.router.use("/products", productsRouter);
     //this.router.use("/orders", ordersRouter);
     this.router.use("/sessions", sessionsRouter);
+
+
     this.read("/", ["PUBLIC"], async (req, res, next) => {
       try {
+        /*
         const options = {
           limit: req.query.limit || 4,
           page: req.query.page || 1,
@@ -27,14 +30,14 @@ export class ViewsRouter extends CustomRouter {
         if (req.query.sort === "desc") {
           options.sort.title = "desc";
         }
-        const all = await products.read({ filter, options });
-        return res.render("index", {
-          products: all.docs,
-          next: all.nextPage,
-          prev: all.prevPage,
-          title: "INDEX",
-          filter: req.query.title,
-        });
+        const all = await products.read({ filter, options });*/
+        return res.render("index")//, {
+          //products: all.docs,
+          //next: all.nextPage,
+          //prev: all.prevPage,
+         // title: "INDEX",
+          //filter: req.query.title,
+        //});
       } catch (error) {
         next(error);
       }
