@@ -67,6 +67,8 @@ const controller = new AuthController();
 const { register, login, signout, verifyAccount } = controller;
 export { register, login, signout, verifyAccount };*/
 
+
+/*
 import service from "../services/users.service.js";
 
 class AuthController {
@@ -108,8 +110,9 @@ class AuthController {
       });
     } catch (error) {
       return next(error);
+    }
   };
-}
+
 
 verifyAccount = async (req, res, next) => {
   try {
@@ -137,4 +140,4 @@ verifyAccount = async (req, res, next) => {
 const controller = new AuthController();
 const { register, login, signout, verifyAccount } = controller;
 export { register, login, signout, verifyAccount };
-
+*/
