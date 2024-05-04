@@ -31,7 +31,7 @@ class SessionsRouter extends CustomRouter {
     );
     this.create(
       "/github",
-      ["PUBLIC"],
+       ["PUBLIC"],
       passport.authenticate("github", { scope: ["email", "profile"] })
     );
     this.read(

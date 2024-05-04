@@ -10,4 +10,4 @@ function has8char(req,res,next) {
     }
 }
 
-export default has8char
+export default has8char;

@@ -123,7 +123,25 @@ class ApiRouter extends CustomRouter {
 //}
 
 const apiRouter = new ApiRouter();
-export default apiRouter.getRouter();*/
+export default apiRouter.getRouter();
+
+
+
+
+
+
+
+
+import { Router } from "express";
+import notesRouter from "./notes.router.api.js";
+import authRouter from "./auth.router.api.js";
+
+const apiRouter = Router();
+
+apiRouter.use("/notes", notesRouter);
+apiRouter.use("/auth", authRouter);
+
+export default apiRouter;*/
 
 import CustomRouter from "../CustomRouter.js";
 import usersRouter from "./users.router.api.js";
@@ -131,16 +149,19 @@ import productsRouter from "./products.router.api.js";
 import ordersRouter from "./orders.router.api.js";
 import sessionsRouter from "./sessions.router.api.js";
 import commentsRouter from "./comments.router.api.js";
+//import authRouter from "./auth.router.api.js";
 
-class ApiRouter extends CustomRouter {
+class SessionsRouter extends CustomRouter {
   init() {
     this.use("/users", usersRouter);
     this.use("/products", productsRouter);
     this.use("/orders", ordersRouter);
     this.use("/sessions", sessionsRouter);
     this.use("/comments", commentsRouter);
+    //this.use("/auth", authRouter);
     }
   }
 
-const apiRouter = new ApiRouter();
+const apiRouter = new SessionsRouter();
 export default apiRouter.getRouter();
+

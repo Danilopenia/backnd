@@ -1,7 +1,7 @@
 fetch("/api/sessions/", { method: "POST" })
   .then((res) => res.json())
   .then((res) => {
-    //console.log(res);
+    console.log(res);
     if (res.statusCode === 200) {
       document.querySelector(".navbar-nav").removeChild(document.querySelector("#registerButton"))
       document.querySelector(".navbar-nav").removeChild(document.querySelector("#loginButton"))
@@ -9,7 +9,7 @@ fetch("/api/sessions/", { method: "POST" })
         try {
           const opts = {
             method: "POST",
-            headers: { "Content-Type": "application/json" /* , token */ },
+            headers: { "Content-Type": "application/json"  /*, token */ },
           };
           let response = await fetch("/api/sessions/signout", opts);
           response = await response.json();

@@ -11,7 +11,7 @@ import {
 class UsersRouter extends CustomRouter {
   init() {
     this.create("/", ["PUBLIC"], create);
-    this.read("/", ["ADMIN"], read);
+    this.read("/", ["PUBLIC"], read); //////VA EN ADMIN
 //    this.read("/stats", ["USER", "PREM"], stats);
     this.read("/:uid", ["USER", "PREM"], readOne);
     this.update("/:uid", ["USER", "PREM"], update);

@@ -11,6 +11,10 @@ import errorHandler from "./src/middlewares/errorHandler.mid.js";
 import pathHandler from "./src/middlewares/pathHandler.mid.js";
 import __dirname from "./utils.js";
 
+
+
+
+
 //server
 const server = express();
 const PORT = process.env.PORT || 8080;
