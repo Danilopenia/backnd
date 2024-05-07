@@ -1,23 +1,40 @@
-import { model, Schema } from "mongoose";
-import mongoosePaginate from "mongoose-paginate-v2";
+/*import mongoosePaginate from "mongoose-paginate-v2";
+import { Schema, model } from "mongoose";
 
 const collection = "users";
 const schema = new Schema(
   {
-    email: { type: String, required: true, unique: true, index: true },
-    password: { type: String, required: true },
     name: { type: String, required: true },
-    lastname: { type: String },
-    age: { type: Number, default: 18 },
-    role: { type: Number, default: 0 },
-    poster: {
-      type: String,
-      default: "https://i.postimg.cc/HxdvTwqJ/events.jpg",
-    },
-    
+    email: { type: String, required: true, index: true, unique: true },
+    password: { type: String, required: true },
+    role: { type: String, default: "USER", enum: ["USER", "ADMIN", "PREM"] },
+    verified: { type: Boolean, default: false },
+    verifiedCode: { type: String, required: true }
   },
   { timestamps: true }
 );
-schema.plugin(mongoosePaginate)
+
+schema.plugin(mongoosePaginate);
+
+const User = model(collection, schema);
+export default User;*/
+import mongoosePaginate from "mongoose-paginate-v2";
+import { Schema, model } from "mongoose";
+
+const collection = "users";
+const schema = new Schema(
+  {
+    name: { type: String, required: true },
+    email: { type: String, required: true, index: true, unique: true },
+    password: { type: String, required: true },
+    role: { type: Number, default: 0, enum: [0, 1, 2] },
+    verified: { type: Boolean, default: false },
+    verifiedCode: { type: String, required: true }
+  },
+  { timestamps: true }
+);
+
+schema.plugin(mongoosePaginate);
+
 const User = model(collection, schema);
 export default User;

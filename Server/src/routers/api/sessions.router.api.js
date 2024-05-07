@@ -1,6 +1,6 @@
 import CustomRouter from "../CustomRouter.js";
-import passport from "../../middlewares/passport.mid.js";
-import passCallBack from "../../middlewares/passCallBack.mid.js";
+import passport from "../../middlewares/passport.js";
+import passCallBack from "../../middlewares/passCallBack.js";
 import {
   register,
   login,
@@ -31,7 +31,7 @@ class SessionsRouter extends CustomRouter {
     );
     this.create(
       "/github",
-      ["PUBLIC"],
+       ["PUBLIC"],
       passport.authenticate("github", { scope: ["email", "profile"] })
     );
     this.read(
@@ -44,7 +44,7 @@ class SessionsRouter extends CustomRouter {
       github
     );
     this.create("/", ["USER", "ADMIN", "PREM"], me);
-    this.create("/signout", ["USER", "ADMIN", "PREM"], signout);
+    this.create("/signout", ["PUBLIC"], signout);
     this.read("/badauth", ["PUBLIC"], badauth);
   }
 }

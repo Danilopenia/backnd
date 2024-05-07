@@ -1,122 +1,92 @@
-import fs from "fs"
-import crypto from "crypto"
+import fs from "fs";
+import notFoundOne from "../../utils/notFoundOne.utils.js";
 
-class OrderManager{
-    static #orders
-   static #perGain = 0.3;
-   static #totalGain = 0;
-
-   
-    init() {
-      try{
-        const exists = fs.existsSync(this.path);
-        if (!exists) {
-          const data = JSON.stringify([],null,2 );
-          fs.writeFileSync(this.path, data);
-        } else {
-          this.orders = JSON.parse(fs.readFileSync(this.path, "utf-8"));
-        }
-      }catch(error){
-        return error.message;
-      }
-      } constructor(path){
-        this.path = path;
-        this.orders = [];
-        this.init();
-    }
-      async createOrder(data ) {
-        try {
-      const order = {
-        id: crypto.randomBytes(12).toString("hex"),
-        name:data.name,
-        price: data.price || 10,
-        poster: data.poster || "https://i.postimg.cc/HxdvTwqJ/events.jpg",
-        stock: data.stock || 50,
-        capacity: data.capacity || 50,
-        date: data.date || new Date(),
-      }; 
-      this.orders.push(order);
-      const jsonData = JSON.stringify(this.orders,null,2)
-        await fs.promises.writeFile(this.path, jsonData);
-        console.log("create"+ order.id);
-        return order.id;
-    }catch(error){
-      console.log(error.message);
-      return error.message
-    }}
-getOrders() {
+class OrdersManager {
+  init() {
     try {
-    
-     if (this.orders.length===0) {
-       throw new Error("they arent orders");
-     }else{
-       return this.orders;
-     }
-     
+      const exists = fs.existsSync(this.path);
+      if (!exists) {
+        const data = JSON.stringify([], null, 2);
+        fs.writeFileSync(this.path, data);
+      } else {
+        this.orders = JSON.parse(fs.readFileSync(this.path, "utf-8"));
+      }
     } catch (error) {
-     return error.message
+      throw error;
     }
-   }
-
- getOrdersById(id) {
-try {
-  const one = this.orders.find((each) => each.id === id);
-   if (!one) { 
-    throw new Error ("ERROR the order with id "+id+" doesnt exist");
-   }else{
-    return one;
-   }
-  
-  } catch (error) {
-  return error.message;
-}
-}
-
-async removeOrderById(id) {
-  try {
-    let one = this.orders.find((each) => each.id === id);
-    if (!one) {
-      throw new Error("There isn't any order");
-    } else {
-      this.orders = this.orders.filter((each) => each.id !== id);
+  }
+  constructor(path) {
+    this.path = path;
+    this.orders = [];
+    this.init();
+  }
+  async create(data) {
+    try {
+      this.orders.push(data);
       const jsonData = JSON.stringify(this.orders, null, 2);
       await fs.promises.writeFile(this.path, jsonData);
-      console.log("deleted " + id);
-      return id;
+      return data;
+    } catch (error) {
+      throw error;
     }
-  } catch (error) {
-    console.log(error.message);
-    return error.message;
   }
-}
-
-  
-async soldOrder(quantity, pid) {
-  try {
-    const one = this.getOrdersById(pid);
-    if (one) {
-      if (one.capacity >= quantity) {
-        one.capacity = one.capacity - quantity;
-        OrderManager.#totalGain =
-        OrderManager.#totalGain +
-          one.price * quantity * OrderManager.#perGain;
-        const jsonData = JSON.stringify(this.orders, null, 2);
-        await fs.promises.writeFile(this.path, jsonData);
-        console.log("Capacity available " + one.capacity);
-        return one.capacity;
+  read({ filter, options }) {
+    //este metodo para ser compatible con las otras persistencias
+    //necesita agregar los filtros
+    //y la paginacion/orden
+    try {
+      if (this.orders.length === 0) {
+        const error = new Error("NOT FOUND!");
+        error.statusCode = 404;
+        throw error;
       } else {
-        throw new Error("There aren't stock");
+        return this.orders;
       }
-    } else {
-      throw new Error("There isn't any product");
+    } catch (error) {
+      throw error;
     }
-  } catch (error) {
-    console.log(error.message);
-    return error.message;
+  }
+  readOne(id) {
+    try {
+      const one = this.orders.find((each) => each._id === id);
+      if (!one) {
+        const error = new Error("NOT FOUND!");
+        error.statusCode = 404;
+        throw error;
+      } else {
+        return one;
+      }
+    } catch (error) {
+      throw error;
+    }
+  }
+  async update(eid, data) {
+    try {
+      const one = this.readOne(eid);
+      notFoundOne(one)
+      for (let each in data) {
+        one[each] = data[each]
+      }
+      const jsonData = JSON.stringify(this.orders, null, 2);
+      await fs.promises.writeFile(this.path, jsonData);
+      return one;
+    } catch (error) {
+      throw error;
+    }
+  }
+  async destroy(id) {
+    try {
+      const one = this.readOne(id);
+      notFoundOne(one)
+      this.orders = this.orders.filter((each) => each._id !== id);
+      const jsonData = JSON.stringify(this.orders, null, 2);
+      await fs.promises.writeFile(this.path, jsonData);
+      return one;
+    } catch (error) {
+      throw error;
+    }
   }
 }
-}
 
-
-const orders = new OrderManager("./src/data/fs/files/orders.json");
-export default orders
+const orders = new OrdersManager("./src/data/fs/files/orders.json");
+export default orders;

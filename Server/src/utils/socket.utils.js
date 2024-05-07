@@ -1,5 +1,5 @@
 import { socketServer } from "../../server.js";
-import events from "../data/fs/products.fs.js";
+import products from "../data/fs/products.fs.js";
 import propsProductsUtils from "./props.Products.utils.js";
 
 export default (socket) => {

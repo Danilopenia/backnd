@@ -10,8 +10,8 @@ class SessionsController {
       try {
         return res
           .cookie("token", req.token, {
-            maxAge: 7 * 24 * 60 * 60 * 1000,
-            httpOnly: true,
+            maxAge: 7 * 24 * 60 * 60 * 1000, 
+            //httpOnly: true,              //////SE COMENTO PORQUE NO DEJA BORRAR LA COOKIE PARA EL SIGNOUT
           })
           .success200("Logged in!");
       } catch (error) {
@@ -46,8 +46,13 @@ class SessionsController {
     };
     signout = async (req, res, next) => {
       try {
-        return res.clearCookie("token").success200("Signed out!");
+        // Borra la cookie "token"
+        res.clearCookie("token");
+        
+        // Envía una respuesta al cliente indicando que se ha cerrado la sesión correctamente
+        res.status(200).json({ message: "Signed out!" });
       } catch (error) {
+        // Si hay un error, pasa al siguiente middleware de manejo de errores
         return next(error);
       }
     };

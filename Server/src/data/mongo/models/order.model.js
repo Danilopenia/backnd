@@ -5,7 +5,7 @@ const collection = "orders";
 const schema = new Schema(
   {
     user_id: { type: Types.ObjectId, required: true, ref: "users" },
-    clothe_id: { type: Types.ObjectId, required: true, ref: "clothes" },
+    product_id: { type: Types.ObjectId, required: true, ref: "products" },
     quantity: { type: Number, default: 1 },
     state: {
       type: String,
@@ -22,7 +22,7 @@ schema.pre("find", function () {
   this.populate("user_id", "-createdAt -updatedAt -__v");
 });
 schema.pre("find", function () {
-  this.populate("clothe_id", "-createdAt -updatedAt -__v");
+  this.populate("product_id", "-createdAt -updatedAt -__v");
 });
 
 const Order = model(collection, schema);

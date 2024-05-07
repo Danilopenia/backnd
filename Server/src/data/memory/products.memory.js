@@ -42,7 +42,7 @@ class ProductManager {
       if (!one) {
         throw new Error("There isn't any product with id=" + id);
       } else {
-        this.events = this.products.filter((each) => each.id !== id);
+        this.products = this.products.filter((each) => each.id !== id);
         const jsonData = JSON.stringify(this.products, null, 2);
         await fs.promises.writeFile(this.path, jsonData);
         console.log("deleted " + id);

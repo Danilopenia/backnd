@@ -1,9 +1,6 @@
-import User from "./models/user.model.js";
-import Product from "./models/product.model.js";
-import Order from "./models/order.model.js";
-import Comment from "./models/comment.model.js";
-import notFoundOne from "../../utils/notFoundOne.utils.js";
 import { Types } from "mongoose";
+import CustomError from "../../utils/errors/CustomError.js";
+import errors from "../../utils/errors/errors.js";
 
 class MongoManager {
   constructor(model) {
@@ -21,9 +18,7 @@ class MongoManager {
     try {
       const all = await this.model.paginate(filter, options);
       if (all.totalDocs === 0) {
-        const error = new Error("There aren't any document");
-        error.statusCode = 404;
-        throw error;
+       CustomError.new(errors.notFound);
       }
       return all;
     } catch (error) {
@@ -36,7 +31,7 @@ class MongoManager {
         { $match: { user_id: new Types.ObjectId(uid) } },
         {
           $lookup: {
-            from: "products",
+            from: "product",
             foreignField: "_id",
             localField: "product_id",
             as: "product_id",
@@ -49,7 +44,7 @@ class MongoManager {
             },
           },
         },
-        { $set: { subtotal: { $multiply: ["$price", "$quantity"] } } },
+        { $set: { subtotal: { $multiply: ["$price", "$stock"] } } },
         { $group: { _id: "$user_id", total: { $sum: "$subtotal" } } },
         {
           $project: {
@@ -67,10 +62,18 @@ class MongoManager {
       throw error;
     }
   }
-  async readOne(id) {
+  /*async readOne(id) {
     try {
       const one = await this.model.findById(id).lean();
-      notFoundOne(one);
+      CustomError.new(errors.notFound);
+      return one;
+    } catch (error) {
+      throw error;
+    }
+  }*/
+  async readOne(id) {
+    try {
+      const one = await this.model.findById(id);
       return one;
     } catch (error) {
       throw error;
@@ -88,7 +91,7 @@ class MongoManager {
     try {
       const opt = { new: true };
       const one = await this.model.findByIdAndUpdate(id, data, opt);
-      notFoundOne(one);
+      CustomError.new(errors.notFound);
       return one;
     } catch (error) {
       throw error;
@@ -97,7 +100,7 @@ class MongoManager {
   async destroy(id) {
     try {
       const one = await this.model.findByIdAndDelete(id);
-      notFoundOne(one);
+      CustomError.new(errors.notFound);
       return one;
     } catch (error) {
       throw error;
@@ -118,10 +121,4 @@ class MongoManager {
   }
 }
 
-const users = new MongoManager(User);
-const products = new MongoManager(Product);
-const orders = new MongoManager(Order);
-const comments = new MongoManager(Comment);
-
-export { users, products, orders, comments };
 export default MongoManager;
