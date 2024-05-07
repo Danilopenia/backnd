@@ -1,7 +1,8 @@
 import OrderDTO from "../dto/order.dto.js";
-import dao from "../data/index.factory.js";
+//import dao from "../data/index.factory.js";
+import orders from "../data/mongo/orders.mongo.js";
 
-const { orders } = dao;
+//const { orders } = dao;
 
 class OrdersRep {
   constructor() {

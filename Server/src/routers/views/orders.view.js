@@ -1,12 +1,28 @@
-/*import { Router } from "express";
+import { Router } from "express";
 
-import { orders, users } from "../../data/mongo/manager.mongo.js";
+import orders from "../../data/mongo/orders.mongo.js"
+import users from "../../data/mongo/users.mongo.js"
 
 import passCallBack from "../../middlewares/passCallBack.js";
 
-const productsRouter = Router();
+const ordersRouter = Router();
 
-productsRouter.get("/", passCallBack("jwt"), async (req, res, next) => {
+ordersRouter.get("/newO", passCallBack("jwt"), /*isAdmin,*/ (req, res, next) => {
+  try {
+    return res.render("newO", { title: "CREATE ORDER" });
+  } catch (error) {
+    next(error);
+  }
+});
+ordersRouter.get("/formOrders", passCallBack("jwt"), /*isAdmin,*/ (req, res, next) => {
+  try {
+    return res.render("formOrders", { title: "CREATE MOVIE" });
+  } catch (error) {
+    next(error);
+  }
+});
+
+ordersRouter.get("/", passCallBack("jwt"), async (req, res, next) => {
   try {
     const options = {
       limit: req.query.limit || 20,
@@ -29,4 +45,4 @@ productsRouter.get("/", passCallBack("jwt"), async (req, res, next) => {
   }
 });
 
-export default productsRouter;*/
+export default ordersRouter;

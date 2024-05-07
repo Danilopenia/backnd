@@ -31,20 +31,20 @@ class MongoManager {
         { $match: { user_id: new Types.ObjectId(uid) } },
         {
           $lookup: {
-            from: "events",
+            from: "product",
             foreignField: "_id",
-            localField: "event_id",
-            as: "event_id",
+            localField: "product_id",
+            as: "product_id",
           },
         },
         {
           $replaceRoot: {
             newRoot: {
-              $mergeObjects: [{ $arrayElemAt: ["$event_id", 0] }, "$$ROOT"],
+              $mergeObjects: [{ $arrayElemAt: ["$product_id", 0] }, "$$ROOT"],
             },
           },
         },
-        { $set: { subtotal: { $multiply: ["$price", "$quantity"] } } },
+        { $set: { subtotal: { $multiply: ["$price", "$stock"] } } },
         { $group: { _id: "$user_id", total: { $sum: "$subtotal" } } },
         {
           $project: {
@@ -62,10 +62,18 @@ class MongoManager {
       throw error;
     }
   }
-  async readOne(id) {
+  /*async readOne(id) {
     try {
       const one = await this.model.findById(id).lean();
       CustomError.new(errors.notFound);
+      return one;
+    } catch (error) {
+      throw error;
+    }
+  }*/
+  async readOne(id) {
+    try {
+      const one = await this.model.findById(id);
       return one;
     } catch (error) {
       throw error;

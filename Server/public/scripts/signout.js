@@ -63,6 +63,7 @@
       });
     } else {
       document.querySelector(".navbar-nav").removeChild(document.querySelector("#formButton"))
+      document.querySelector(".navbar-nav").removeChild(document.querySelector("#formOrdersButton"))
       document.querySelector(".navbar-nav").removeChild(document.querySelector("#ordersButton"))
       document.querySelector(".navbar-nav").removeChild(document.querySelector("#signout"))
     }

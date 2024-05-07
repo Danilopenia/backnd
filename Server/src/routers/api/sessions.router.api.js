@@ -44,7 +44,7 @@ class SessionsRouter extends CustomRouter {
       github
     );
     this.create("/", ["USER", "ADMIN", "PREM"], me);
-    this.create("/signout", ["USER", "ADMIN", "PREM"], signout);
+    this.create("/signout", ["PUBLIC"], signout);
     this.read("/badauth", ["PUBLIC"], badauth);
   }
 }
