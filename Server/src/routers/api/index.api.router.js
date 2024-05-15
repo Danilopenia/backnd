@@ -103,7 +103,7 @@ class ApiRouter extends CustomRouter {
     this.use("/comments", commentsRouter);
     //this.read("/sum", ["PUBLIC"], async (req, res) => {
       try {
-        console.log("global process id: " + process.pid);
+       console.log("global process id: " + process.pid);
         const child = fork("./src/utils/sum.util.js");
         child.send("start");
         child.on("message", (result) => res.success200(result));

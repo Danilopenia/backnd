@@ -1,3 +1,4 @@
+import winstonLog from "../utils/logger/index.js";
 class OrderManager {
   static #orders = [];
 
@@ -18,7 +19,7 @@ class OrderManager {
     }
 
     if (missingProps.length) {
-      console.log(`Propiedades faltantes: ${missingProps.join(" ")}`);
+      winstonLog.INFO(`Propiedades faltantes: ${missingProps.join(" ")}`);
     } else {
       const id =
         OrderManager.#orders[OrderManager.#orders.length - 1]?.id + 1 ||
@@ -45,11 +46,11 @@ removeOrderById(id)
       this.products = this.orders.filter((each) => each.id !== id);
       const jsonData = JSON.stringify(this.orders, null, 2);
       await fs.promises.writeFile(this.path, jsonData);
-      console.log("deleted " + id);
+      winstonLog.INFO("deleted " + id);
       return id;
     }
   } catch (error) {
-    console.log(error.message);
+    winstonLog.ERROR(error.message);
     return error.message;
   }
 
@@ -62,7 +63,7 @@ OrdManager.create({
   stock: 100,
 });
 
-console.log(OrdManager.readOne(1));
+winstonLog.INFO(OrdManager.readOne(1));
 
 OrdManager.create({
   title: "el mundo de tomas 2",
@@ -70,4 +71,4 @@ OrdManager.create({
   price: 200,
 });
 
-console.log(OrdManager.read());
+winstonLog.INFO(OrdManager.read());

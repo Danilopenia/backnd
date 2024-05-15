@@ -2,6 +2,8 @@ import { Types } from "mongoose";
 import CustomError from "../../utils/errors/CustomError.js";
 import errors from "../../utils/errors/errors.js";
 
+
+
 class MongoManager {
   constructor(model) {
     this.model = model;
@@ -76,6 +78,7 @@ class MongoManager {
       const one = await this.model.findById(id);
       return one;
     } catch (error) {
+      CustomError.new(errors.notFound);
       throw error;
     }
   }
@@ -91,25 +94,25 @@ class MongoManager {
     try {
       const opt = { new: true };
       const one = await this.model.findByIdAndUpdate(id, data, opt);
-      CustomError.new(errors.notFound);
       return one;
     } catch (error) {
+      CustomError.new(errors.invalidId)
       throw error;
     }
   }
   async destroy(id) {
     try {
       const one = await this.model.findByIdAndDelete(id);
-      CustomError.new(errors.notFound);
       return one;
     } catch (error) {
+      CustomError.new(errors.invalidId);
       throw error;
     }
   }
   async stats({ filter }) {
     try {
       let stats = await this.model.find(filter).explain("executionStats");
-      console.log(stats);
+      //console.log(stats);
       stats = {
         quantity: stats.executionStats.nReturned,
         time: stats.executionStats.executionTimeMillis,

@@ -4,7 +4,7 @@ import propsProductsUtils from "./props.Products.utils.js";
 
 export default (socket) => {
   console.log("client " + socket.id + " connected");
-  socket.emit("movies", products.readProducts());
+  socket.emit("", products.readProducts());
   socket.on("newMovie", async (data) => {
     try {
       propsProductsUtils(data);

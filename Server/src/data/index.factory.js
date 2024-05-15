@@ -1,6 +1,9 @@
 import argsUtil from "../utils/args.util.js";
 import dbConnection from "../utils/db.utils.js"
 
+
+
+
 const environment = argsUtil.env;
 //la variable puede ser el ambiente o directamente la persistencia con la que tengo que trabajar
 //va a depender de una variable de entorno o del argumento que se pase
@@ -16,7 +19,7 @@ switch (environment) {
     break;
   case "dev":
     //vamos a usar FS
-    console.log("FS CONNECTED");
+   console.log("FS CONNECTED");
     const { default: productsFs } = await import("./fs/products.fs.js")
     const { default: usersFs } = await import("./fs/users.fs.js")
     const { default: ordersFs } = await import("./fs/orders.fs.js")

@@ -1,5 +1,6 @@
 import fs from "fs"
 import crypto from "crypto"
+import winstonLog from "../utils/logger/index.js";
 
 class ProductsManager{
     static #products
@@ -37,10 +38,10 @@ class ProductsManager{
       this.products.push(product);
       const jsonData = JSON.stringify(this.products,null,2)
         await fs.promises.writeFile(this.path, jsonData);
-        console.log("create"+ product.id);
+        winstonLog.INFO("create"+ product.id);
         return product.id;
     }catch(error){
-      console.log(error.message);
+      winstonLog.ERROR(error.message);
       return error.message
     }}
 getProducts() {
@@ -80,11 +81,11 @@ async removeProductById(id) {
       this.products = this.products.filter((each) => each.id !== id);
       const jsonData = JSON.stringify(this.products, null, 2);
       await fs.promises.writeFile(this.path, jsonData);
-      console.log("deleted " + id);
+      winstonLog.INFO("deleted " + id);
       return id;
     }
   } catch (error) {
-    console.log(error.message);
+    winstonLog.INFO(error.message);
     return error.message;
   }
 }
@@ -101,7 +102,7 @@ async soldticket(quantity, pid) {
           one.price * quantity * ProductsManager.#perGain;
         const jsonData = JSON.stringify(this.products, null, 2);
         await fs.promises.writeFile(this.path, jsonData);
-        console.log("Capacity available " + one.capacity);
+        winstonLog.INFO("Capacity available " + one.capacity);
         return one.capacity;
       } else {
         throw new Error("There aren't stock");
@@ -110,7 +111,7 @@ async soldticket(quantity, pid) {
       throw new Error("There isn't any product");
     }
   } catch (error) {
-    console.log(error.message);
+    winstonLog.ERROR(error.message);
     return error.message;
   }
 }

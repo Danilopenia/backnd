@@ -1,3 +1,5 @@
+import winstonLog from "../utils/logger/index.js";
+
 class ProductManager {
     static #products = [];
   
@@ -18,7 +20,7 @@ class ProductManager {
       }
   
       if (missingProps.length) {
-        console.log(`Propiedades faltantes: ${missingProps.join(" ")}`);
+        winstonLog.INFO(`Propiedades faltantes: ${missingProps.join(" ")}`);
       } else {
         const id =
           ProductManager.#products[ProductManager.#products.length - 1]?.id + 1 ||
@@ -45,11 +47,11 @@ class ProductManager {
         this.products = this.products.filter((each) => each.id !== id);
         const jsonData = JSON.stringify(this.products, null, 2);
         await fs.promises.writeFile(this.path, jsonData);
-        console.log("deleted " + id);
+        winstonLog.INFO("deleted " + id);
         return id;
       }
     } catch (error) {
-      console.log(error.message);
+      winstonLog.ERROR(error.message);
       return error.message;
     }
   
@@ -62,7 +64,7 @@ class ProductManager {
     stock: 100,
   });
   
-  console.log(ProdManager.readOne(1));
+  winstonLog.INFO(ProdManager.readOne(1));
   
   ProdManager.create({
     title: "el mundo de tomas 2",
@@ -70,4 +72,4 @@ class ProductManager {
     price: 200,
   });
   
-  console.log(ProdManager.read());
+  winstonLog.INFO(ProdManager.read());

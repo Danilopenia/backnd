@@ -1,3 +1,4 @@
+
 class userManager {
     static #users = [];
   
@@ -65,7 +66,7 @@ class userManager {
   });
   
   console.log(UserManager.read());
-  console.log(UserManager.readOne(2));
+ console.log(UserManager.readOne(2));
   
   UserManager.create({
     name: "Matías",

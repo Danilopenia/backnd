@@ -1,4 +1,7 @@
 import service from "../services/notes.service.js";
+import CustomError from "../utils/errors/CustomError.js";
+import winston from "../utils/logger/winston.utils.js"
+import errors from "../utils/errors/errors.js";
 
 class NotesController {
   constructor() {
@@ -8,6 +11,9 @@ class NotesController {
     try {
       const data = req.body;
       data.user_id = req.user._id;
+
+     winston.INFO(data);
+
       await this.service.create(data);
       return res.json({
         statusCode: 201,
@@ -17,6 +23,33 @@ class NotesController {
       return next(error);
     }
   };
+
+  read = async (req, res, next) => {
+    try {
+      const options = {
+        limit: req.query.limit || 5,
+        page: req.query.page || 1,
+        sort: { title: 1 },
+        lean: true,
+      };
+      const filter = {};
+      if (req.query.text) {
+        filter.text = new RegExp(req.query.text.trim(), "i");
+      }
+      if (req.query.sort === "desc") {
+        options.sort.title = "desc";
+      }
+      const response = await this.service.read({ filter, options });
+      if (response) {
+        return res.success200(response);
+      }
+      CustomError.new(errors.notFound)
+    } catch (error) {
+      return next(error);
+    }
+  };
+
+
   readByUser = async (req, res, next) => {
     try {
       const filter = {
@@ -26,22 +59,21 @@ class NotesController {
         limit: req.query.limit || 4,
         page: req.query.page || 1,
       };
-      const all = await this.service.read({ filter, options });
-      if (all.docs.length > 0) {
+      const response = await this.service.read({ filter, options });
+      if (response.docs.length > 0) {
         return res.json({
           statusCode: 200,
           response: all,
         });
-      } else {
-        const error = new Error("Not found!");
-        error.statusCode = 404;
-        throw error;
       }
+      CustomError.new(errors.notFound)
     } catch (error) {
       return next(error);
     }
   };
 }
+
+
 
 const controller = new NotesController();
 const { create, readByUser } = controller;

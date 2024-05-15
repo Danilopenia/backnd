@@ -1,5 +1,6 @@
+
 export default (req, res, next) => {
-  console.error(`${req.method} ${req.url} not found path`);
+  console.log(`${req.method} ${req.url} not found path`);
   return res.json({
     statusCode: 404,
     url: `${req.method} ${req.url}`,
