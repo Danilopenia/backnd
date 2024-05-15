@@ -1,4 +1,4 @@
-/*export default (req, res, next) => {
+export default (req, res, next) => {
   try {
     const { role } = req.user
     if (role === 1) {
@@ -11,4 +11,4 @@
   } catch (error) {
     return next(error)
   }
-}*/
+}

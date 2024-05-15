@@ -1,11 +1,22 @@
+import service from "../services/users.service.js";
+import CustomError from "../utils/errors/CustomError.js";
+import errors from "../utils/errors/errors.js";
+
 class SessionsController {
-    register = async (req, res, next) => {
-      try {
-        return res.success201("Registered!");
-      } catch (error) {
-        return next(error);
-      }
-    };
+  constructor(){
+    this.service = service;
+  }
+  register = async (req, res, next) => {
+    const {email, name} = req.body;
+    const { verifiedCode} = req.user;
+    await this.service.register({email, name, verifiedCode})
+    try {
+      return res.success201("Registered!");
+    } catch (error) {
+      return next(error);
+    }
+  };
+
     login = async (req, res, next) => {
       try {
         return res
@@ -44,6 +55,39 @@ class SessionsController {
         return next(error);
       }
     };
+
+
+   /* verifyAccount = async (req, res, next) => {
+      try {
+        const { verifyCode, email } = req.body;
+        const user = await service.readByEmail(email);
+        if (user.verifyCode === verifyCode) {
+          await service.update(user._id, { verified: true });
+          return res.success200("usuario verificado")
+        } else {
+          return res.error401();
+        }
+      } catch (error) {
+      next(error);
+      }
+    };*/
+       verifyAccount = async (req, res, next) => {
+    try {
+      const { email, verifiedCode } = req.body;
+      const user = await service.readByEmail(email);
+      if (user.verifiedCode === verifiedCode) {
+        await service.update(user._id, { verified: true });
+        return res.json({
+          statusCode: 200,
+          message: "Verified user!",
+        });
+      } 
+        CustomError.new(errors.token)
+    } catch (error) {
+      return next(error);
+    }
+  }; 
+
     signout = async (req, res, next) => {
       try {
         // Borra la cookie "token"
@@ -63,9 +107,10 @@ class SessionsController {
         return next(error);
       }
     };
+
   }
   
-  export default SessionsController;
+ 
   const controller = new SessionsController();
-  const { register, login, google, github, me, signout, badauth } = controller;
-  export { register, login, google, github, me, signout, badauth };
+  const { register, login, google, github, me, verifyAccount, signout, badauth } = controller;
+  export { register, login, google, github, me, verifyAccount, signout, badauth };

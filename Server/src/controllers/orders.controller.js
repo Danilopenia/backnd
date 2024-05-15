@@ -76,6 +76,8 @@ export { create, read, update, destroy }; //report
 */
 
 import service from "../services/orders.service.js";
+import CustomError from "../utils/errors/CustomError.js";
+import errors from "../utils/errors/errors.js";
 
 class OrdersController {
   constructor() {
@@ -112,12 +114,27 @@ class OrdersController {
       return next(error);
     }
   };
+  readOne = async (req, res, next) => {
+    try {
+      const { oid } = req.params;
+      const response = await this.service.readOne(oid);
+      if (response) {
+         return res.success200(response);
+      }
+     CustomError.new(errors.notFound)
+    } catch (error) {
+      return next(error);
+    }
+  };
   update = async (req, res, next) => {
     try {
       const { oid } = req.params;
       const data = req.body;
       const response = await this.service.update(oid, data);
-      return res.success200(response);
+      if (response) {
+        return res.success200(response);
+      }
+      CustomError.new(errors.invalidId)
     } catch (error) {
       return next(error);
     }
@@ -126,7 +143,10 @@ class OrdersController {
     try {
       const { oid } = req.params;
       const response = await this.service.destroy(oid);
-      return res.success200(response);
+      if (response) {
+         return res.success200(response);
+      }
+     CustomError.new(errors.invalidId)
     } catch (error) {
       return next(error);
     }

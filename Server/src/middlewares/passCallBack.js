@@ -1,20 +1,21 @@
 import passport from "./passport.js";
+import CustomError from "../utils/errors/CustomError.js";
+import errors from "../utils/errors/errors.js";
+//import winstonLog from "../utils/logger/index.js";
 
-export default (strategy) => {
+const passCallBackMid = (strategy) => {
   return async (req, res, next) => {
-    passport.authenticate(strategy, (err, user, info) => {
-      //console.log({ err, user, info });
-      if (err) {
-        return next(err);
+    passport.authenticate(strategy, (error, user, info) => {
+      console.log({ error, user, info });
+      if (error) {
+        return next(error);
       }
       if (!user) {
-        return res.json({
-          statusCode: info.statusCode || 400,
-          message: info.message || "Bad auth!",
-        });
-      }
+          CustomError.new(errors.callBackPass(info.message || info.toString(), info.statusCode || 401))
+        }
       req.user = user;
       return next();
     })(req, res, next);
   };
 };
+export default passCallBackMid

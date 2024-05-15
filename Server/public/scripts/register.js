@@ -21,7 +21,7 @@ selector.addEventListener("click", async () => {
     response = await response.json();
 
     response.statusCode === 201
-      ? location.replace("/sessions/login")
+      ? location.replace("/sessions/verify")
       : alert("ERROR: " + response.message);
   } catch (error) {
     alert(error.message);

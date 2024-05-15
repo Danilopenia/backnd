@@ -9,6 +9,13 @@ sessionsRouter.get("/register", async (req, res, next) => {
     return next(error);
   }
 });
+sessionsRouter.get("/verify", async (req, res, next) => {
+  try {
+    return res.render("verify");
+  } catch (error) {
+    return next(error);
+  }
+});
 sessionsRouter.get("/login", async (req, res, next) => {
   try {
     return res.render("login");

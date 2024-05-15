@@ -1,0 +1,238 @@
+[31mERROR[39m: No auth token
+[33mWARN[39m: No auth token
+[33mWARN[39m: No auth token
+[33mWARN[39m: GET /api/notessssss not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: winston.info is not a function
+[33mWARN[39m: GET / not found path
+[33mWARN[39m: No auth token
+[33mWARN[39m: GET /api/simplex not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[33mWARN[39m: GET /api/simplex not found path
+[33mWARN[39m: GET /api/simplex/ not found path
+[33mWARN[39m: GET /api/simplex not found path
+[33mWARN[39m: GET /api/simplex not found path
+[33mWARN[39m: GET /simplex not found path
+[33mWARN[39m: GET /simplex not found path
+[33mWARN[39m: GET /simplex not found path
+[33mWARN[39m: GET /sessions/login not found path
+[33mWARN[39m: GET / not found path
+[31mERROR[39m: jwt expired
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[33mWARN[39m: Not Found
+[31mERROR[39m: Cast to ObjectId failed for value "65e8d139a3ba1e618d44d3" (type string) at path "_id" for model "products"
+[31mERROR[39m: Cast to ObjectId failed for value "65e8d139a3ba1e618d44d3d3e" (type string) at path "_id" for model "products"
+[31mERROR[39m: Cast to ObjectId failed for value "65e8d139a3ba1e618d44d3d3e" (type string) at path "_id" for model "products"
+[31mERROR[39m: handleCastError is not defined
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: invalid Id
+[33mWARN[39m: invalid Id
+[33mWARN[39m: invalid Id
+[33mWARN[39m: Not Found
+[33mWARN[39m: invalid Id
+[33mWARN[39m: Not Found
+[31mERROR[39m: response is not defined
+[31mERROR[39m: response is not defined
+[31mERROR[39m: response is not defined
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: invalid Id
+[33mWARN[39m: Not Found
+[33mWARN[39m: GET /api/orders/f21d29be56c74d271ca3b504 not found path
+[33mWARN[39m: GET /api/orders/f21d29be56c74d271ca3b504 not found path
+[33mWARN[39m: GET /api/orders/f21d29be56c74d271ca3b504 not found path
+[33mWARN[39m: GET /api/orders/f21d29be56c74d271ca3b504 not found path
+[33mWARN[39m: GET /api/orders/f21d29be56c74d271ca3b504 not found path
+[33mWARN[39m: GET /api/orders//f21d29be56c74d271ca3b504 not found path
+[33mWARN[39m: GET /api/orders/f21d29be56c74d271ca3b504 not found path
+[33mWARN[39m: GET /api/orders/f21d29be56c74d271ca3b504 not found path
+[33mWARN[39m: GET /api/orders/f21d29be56c74d271ca3b504 not found path
+[33mWARN[39m: GET /api/orders/f21d29be56c74d271ca3b504 not found path
+[33mWARN[39m: GET /api/orders/f21d29be56c74d271ca3b504a not found path
+[33mWARN[39m: GET /api/orders/f21d29be56c74d271ca3b504aa not found path
+[33mWARN[39m: GET /api/orders/f21d29be56c74d271ca3b504a not found path
+[33mWARN[39m: GET /api/orders/f21d29be56c74d271ca3b504 not found path
+[33mWARN[39m: GET /api/orders/f21d29be56c74d271ca3b504a not found path
+[33mWARN[39m: GET /api/orders/f21d29be56c74d271ca3b504 not found path
+[33mWARN[39m: invalid Id
+[33mWARN[39m: invalid Id
+[33mWARN[39m: invalid Id
+[33mWARN[39m: Not Found
+[31mERROR[39m: jwt expired
+[33mWARN[39m: GET /apple-touch-icon-precomposed.png not found path
+[33mWARN[39m: GET /apple-touch-icon.png not found path
+[31mERROR[39m: jwt expired
+[31mERROR[39m: winstonLog is not defined
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: GET /favicon.ico not found path
+[31mERROR[39m: winstonLog is not defined
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: GET /favicon.ico not found path
+[31mERROR[39m: Cannot read properties of null (reading 'password')
+[31mERROR[39m: Cannot read properties of null (reading 'password')
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: GET /favicon.ico not found path
+[31mERROR[39m: users validation failed: name: Path `name` is required.
+[31mERROR[39m: users validation failed: name: Path `name` is required.
+[31mERROR[39m: users validation failed: name: Path `name` is required.
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: users validation failed: name: Path `name` is required.
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: users validation failed: name: Path `name` is required.
+[31mERROR[39m: users validation failed: name: Path `name` is required.
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: users validation failed: name: Path `name` is required.
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: users validation failed: name: Path `name` is required.
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: POST /api/auth/register not found path
+[33mWARN[39m: POST /api/session/register not found path
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: crypto.randombytes is not a function
+[31mERROR[39m: crypto.randombytes is not a function
+[31mERROR[39m: crypto.randombytes is not a function
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: crypto.randombytes is not a function
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: crypto.randombytes is not a function
+[33mWARN[39m: user already exist
+[31mERROR[39m: crypto.randombytes is not a function
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Forbidden
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]

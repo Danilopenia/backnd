@@ -60,7 +60,7 @@ export default class CustomRouter {
             const user = await users.readByEmail(email);
             req.user = user;
 
-            console.log(data);/////
+           console.log(data);
 
             return next();
           } else return res.error403();

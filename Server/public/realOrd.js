@@ -28,6 +28,6 @@ document.querySelector("#newOrder").addEventListener("click", (event) => {
   if (user) {
     data.user = user;
   }
-  console.log(data);
+ console.log(data);
   socket.emit("new order", data);
 });

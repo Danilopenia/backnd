@@ -1,4 +1,8 @@
 import service from "../services/users.service.js";
+import CustomError from "../utils/errors/CustomError.js";
+import errors from "../utils/errors/errors.js";
+
+
 
 class UsersController {
   constructor() {
@@ -28,36 +32,48 @@ class UsersController {
       if (req.query.sort === "desc") {
         options.sort.title = "desc";
       }
-      const all = await this.service.read({ filter, options });
-      return res.success200(all);
+      const response = await this.service.read({ filter, options });
+      if (response) {
+        return res.success200(response);
+      }
+      CustomError.new(errors.notFound)
     } catch (error) {
       return next(error);
     }
   };
   readOne = async (req, res, next) => {
     try {
-      const { eid } = req.params;
-      const one = await this.service.readOne(eid);
-      return res.success200(one);
+      const { uid } = req.params;
+      const response = await this.service.readOne(uid);
+      if (response) {
+       return res.success200(response); 
+      }
+      CustomError.new(errors.notFound)
     } catch (error) {
       return next(error);
     }
   };
   update = async (req, res, next) => {
     try {
-      const { eid } = req.params;
+      const { uid } = req.params;
       const data = req.body;
-      const response = await this.service.update(eid, data);
-      return res.success200(response);
+      const response = await this.service.update(uid, data);
+      if (response) {
+        return res.success200(response);
+      }
+      CustomError.new(errors.invalidId)
     } catch (error) {
       return next(error);
     }
   };
   destroy = async (req, res, next) => {
     try {
-      const { eid } = req.params;
-      const response = await this.service.destroy(eid);
-      return res.success200(response);
+      const { uid } = req.params;
+      const response = await this.service.destroy(uid);
+      if (response) {
+         return res.success200(response);
+      }
+     CustomError.new(errors.invalidId)
     } catch (error) {
       return next(error);
     }
