@@ -1,0 +1,20 @@
+#definir que tipo de aplicacion vamos a construir
+FROM node
+
+#definir donde se va a guardar el proyecto/imagen
+WORKDIR /danilopenia
+
+#opio y muevo el packagede la aplicacion desde elo servidor hacia el contenedor
+COPY package*.json ./
+
+#instalo paquetes
+RUN npm install
+
+#copiar el resto de los archivos del server al contenedor
+COPY . .
+
+#cofigurar el puerto de exposicion
+EXPOSE 8000
+
+#configurar el comando de ejecucion del servidor
+CMD ["npm", "start"]

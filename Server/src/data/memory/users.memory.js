@@ -18,7 +18,7 @@ class userManager {
       }
   
       if (missingProps.length) {
-        console.log(`Propiedades faltantes: ${missingProps.join(" ")}`);
+        winston.INFO(`Propiedades faltantes: ${missingProps.join(" ")}`);
       } else {
         const id = userManager.#users[userManager.#users.length - 1]?.id + 1 || 1;
   
@@ -43,11 +43,11 @@ class userManager {
         this.users = this.users.filter((each) => each.id !== id);
         const jsonData = JSON.stringify(this.users, null, 2);
         await fs.promises.writeFile(this.path, jsonData);
-        console.log("deleted " + id);
+        winston.INFO("deleted " + id);
         return id;
       }
     } catch (error) {
-      console.log(error.message);
+      winston.ERROR(error.message);
       return error.message;
     }
   
@@ -65,8 +65,8 @@ class userManager {
     email: "matiasTest1@gmail.com",
   });
   
-  console.log(UserManager.read());
- console.log(UserManager.readOne(2));
+  winston.INFO(UserManager.read());
+ winston.INFO(UserManager.readOne(2));
   
   UserManager.create({
     name: "Matías",

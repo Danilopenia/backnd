@@ -8,7 +8,7 @@ google.addEventListener("click", async () => {
     };
     let response = await fetch("/api/sessions/google", opts);
     response = await response.json();
-    console.log(response);
+    //habia un log(response)
     //alert(response.message);
     //response.session && location.replace("/");
   } catch (error) {
@@ -25,7 +25,7 @@ github.addEventListener("click", async () => {
     };
     let response = await fetch("/api/sessions/github", opts);
     response = await response.json();
-    console.log(response);
+    //habia un log(response)
     //alert(response.message);
     //response.session && location.replace("/");
   } catch (error) {

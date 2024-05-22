@@ -5,7 +5,6 @@ selector.addEventListener("click", async () => {
             email: document.querySelector("#email").value,
             password: document.querySelector("#password").value
         }
-        //console.log(data);
         const opts = {
             method: "POST",
             headers: { "Content-Type": "application/json" },

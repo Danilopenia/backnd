@@ -17,8 +17,8 @@ export default async function createProduct(id){
      const data = productsMock(id);
      dbUtils();
   await repository.create(data)
-  console.log("PRODUCT CREATED");
+  winston.INFO("PRODUCT CREATED");
   } catch (error) {
-    console.log(error);
+    winston.ERROR(error.message);
   }
 }

@@ -5,6 +5,10 @@ import cookieParser from "cookie-parser";
 import cors from "cors"
 import compression from "express-compression"
 
+import swaggerJSDoc from "swagger-jsdoc"
+import {serve, setup} from "swagger-ui-express"
+
+
 import { engine } from "express-handlebars"
 
 import router from "./src/routers/index.router.js";
@@ -16,6 +20,11 @@ import winston from "./src/middlewares/winston.js";
 
 
 
+import cluster from "cluster"
+import { cpus } from "os";
+
+
+import options from "./src/utils/swagger.js";
 
 
 
@@ -24,7 +33,13 @@ import winston from "./src/middlewares/winston.js";
 const server = express();
 const PORT = process.env.PORT || 8080;
 const ready = () => winstonLog.INFO("server ready on port " + PORT);
-server.listen(PORT, ready);
+
+
+
+
+
+
+
 
 //middlewares
 server.use(
@@ -33,6 +48,12 @@ server.use(
     credentials: true,
   })
 );
+
+
+//swagger
+const specs = swaggerJSDoc(options)
+server.use("/api/docs", serve, setup(specs))
+
 server.use(cookieParser(process.env.SECRET));
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
@@ -58,3 +79,19 @@ server.set("views", __dirname + "/src/views");
 server.use("/", router);
 server.use(errorHandler);
 server.use(pathHandler);
+
+
+//cluster
+
+
+
+console.log(cluster.isPrimary)
+if (cluster.isPrimary) {
+  console.log("PRIMARY ID:"+ process.pid);
+  const numberOfProcess = cpus().lenght
+  console.log("NUMBER OF PROCESS OF MY COMPUTER: "+ numberOfProcess);
+  cluster.fork()
+}else{
+  console.log("WORKER ID:"+process.pid);
+  server.listen(PORT, ready);
+}

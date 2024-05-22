@@ -2,6 +2,7 @@ import { faker } from "@faker-js/faker";
 import repository from "../../repositories/users.rep.js"
 import dbUtils from "../../utils/db.utils.js";
 import createProduct from "./products.mock.js";
+import winston from "../utils/logger/winston.utils.js";
 
 function usersMock() {
   return {
@@ -22,9 +23,9 @@ async function createMocks(){
      const user = await repository.create(data)
      for(let i=1; i<=10;i++)
      await createProduct(user._id)
-    console.log("USER CREATED");
+    winston.INFO("USER CREATED");
   } catch (error) {
-    console.log(error);
+    winston.ERROR(error.message);
   }
 }
 createMocks();

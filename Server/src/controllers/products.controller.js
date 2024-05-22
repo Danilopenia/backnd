@@ -1,6 +1,7 @@
 import ProductsServices from "../services/products.service.js"
 import CustomError from "../utils/errors/CustomError.js";
 import errors from "../utils/errors/errors.js";
+import winston from "../utils/logger/winston.utils.js";
 
 class ProductsController {
   constructor() {
@@ -10,6 +11,7 @@ class ProductsController {
     try {
       const data = req.body;
       const response = await this.service.create(data);
+      winston.INFO(JSON.stringify(data))
       return res.success201(response);
     } catch (error) {
       return next(error);

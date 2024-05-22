@@ -22,7 +22,7 @@ class SessionsController {
         return res
           .cookie("token", req.token, {
             maxAge: 7 * 24 * 60 * 60 * 1000, 
-            //httpOnly: true,              //////SE COMENTO PORQUE NO DEJA BORRAR LA COOKIE PARA EL SIGNOUT
+            httpOnly: true,              //////SE COMENTO PORQUE NO DEJA BORRAR LA COOKIE PARA EL SIGNOUT
           })
           .success200("Logged in!");
       } catch (error) {
@@ -56,21 +56,6 @@ class SessionsController {
       }
     };
 
-
-   /* verifyAccount = async (req, res, next) => {
-      try {
-        const { verifyCode, email } = req.body;
-        const user = await service.readByEmail(email);
-        if (user.verifyCode === verifyCode) {
-          await service.update(user._id, { verified: true });
-          return res.success200("usuario verificado")
-        } else {
-          return res.error401();
-        }
-      } catch (error) {
-      next(error);
-      }
-    };*/
        verifyAccount = async (req, res, next) => {
     try {
       const { email, verifiedCode } = req.body;

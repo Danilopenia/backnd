@@ -236,3 +236,114 @@
 [33mWARN[39m: Invalid credentials
 [33mWARN[39m: Invalid credentials
 [33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: "danilopenia13@gmail.com" }
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: Failed to lookup view "detail" in views directory "/Users/danilopenia/Desktop/Backend-entregable-clase9/Server/src/views"
+[31mERROR[39m: Failed to lookup view "detail" in views directory "/Users/danilopenia/Desktop/Backend-entregable-clase9/Server/src/views"
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[31mERROR[39m: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: "danilopenia13@gmail.com" }
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[31mERROR[39m: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: "danilopenia13@gmail.com" }
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: Cannot read properties of null (reading 'password')
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: jwt expired
+[33mWARN[39m: GET /favicon.ico not found path
+[31mERROR[39m: Failed to lookup view "detail" in views directory "/Users/danilopenia/Desktop/Backend-entregable-clase9/Server/src/views"
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: Failed to lookup view "detail" in views directory "/Users/danilopenia/Desktop/Backend-entregable-clase9/Server/src/views"
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: Failed to lookup view "detail" in views directory "/Users/danilopenia/Desktop/Backend-entregable-clase9/Server/src/views"
+[31mERROR[39m: Failed to lookup view "detail" in views directory "/Users/danilopenia/Desktop/Backend-entregable-clase9/Server/src/views"
+[31mERROR[39m: Failed to lookup view "detail" in views directory "/Users/danilopenia/Desktop/Backend-entregable-clase9/Server/src/views"
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: GET /apple-touch-icon-precomposed.png not found path
+[33mWARN[39m: GET /apple-touch-icon.png not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: GET /api/docs not found path
+[33mWARN[39m: GET /api/docs/ not found path
+[33mWARN[39m: GET /api/docs/ not found path
+[33mWARN[39m: GET /api/docs/ not found path
+[33mWARN[39m: GET /api/docs/ not found path
+[33mWARN[39m: GET /api/docs/ not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: products validation failed: title: Path `title` is required.
+[31mERROR[39m: products validation failed: title: Path `title` is required.
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Not Found
+[33mWARN[39m: invalid Id
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
