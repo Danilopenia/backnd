@@ -4,18 +4,18 @@
       "vusers.created_by_name.0": 40,
       "vusers.created": 40,
       "http.requests": 40,
-      "plugins.metrics-by-endpoint./api/simple.errors.ECONNREFUSED": 40,
+      "plugins.metrics-by-endpoint./simplex.errors.ECONNREFUSED": 40,
       "errors.ECONNREFUSED": 40,
       "vusers.failed": 40
     },
     "rates": {
       "http.request_rate": 40
     },
-    "firstCounterAt": 1715366531322,
-    "lastCounterAt": 1715366532298,
-    "firstMetricAt": 1715366531322,
-    "lastMetricAt": 1715366532298,
-    "period": 1715366530000,
+    "firstCounterAt": 1715976464709,
+    "lastCounterAt": 1715976465685,
+    "firstMetricAt": 1715976464709,
+    "lastMetricAt": 1715976465685,
+    "period": 1715976460000,
     "summaries": {},
     "histograms": {}
   },
@@ -25,7 +25,7 @@
         "vusers.created_by_name.0": 40,
         "vusers.created": 40,
         "http.requests": 40,
-        "plugins.metrics-by-endpoint./api/simple.errors.ECONNREFUSED": 40,
+        "plugins.metrics-by-endpoint./simplex.errors.ECONNREFUSED": 40,
         "errors.ECONNREFUSED": 40,
         "vusers.failed": 40
       },
@@ -33,11 +33,11 @@
         "http.request_rate": 40
       },
       "http.request_rate": null,
-      "firstCounterAt": 1715366531322,
-      "lastCounterAt": 1715366532298,
-      "firstMetricAt": 1715366531322,
-      "lastMetricAt": 1715366532298,
-      "period": "1715366530000",
+      "firstCounterAt": 1715976464709,
+      "lastCounterAt": 1715976465685,
+      "firstMetricAt": 1715976464709,
+      "lastMetricAt": 1715976465685,
+      "period": "1715976460000",
       "summaries": {},
       "histograms": {}
     }

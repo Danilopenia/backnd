@@ -3,6 +3,7 @@ import CustomRouter from "./CustomRouter.js";
 import apiRouter from "./api/index.api.router.js";
 import viewsRouter from "./views/index.view.js";
 
+
 class IndexRouter extends CustomRouter {
   init() {
     this.router.use("/api", apiRouter);
@@ -23,18 +24,29 @@ class IndexRouter extends CustomRouter {
           return next (error)
       }
   })
-  }
+ }
 }
+
+
 
 
 const router = new IndexRouter();
 export default router.getRouter();
 
 
-/*import CustomRouter from "./CustomRouter.js";
+
+
+
+
+
+
+
+/*
+import CustomRouter from "./CustomRouter.js";
 import apiRouter from "./api/index.api.router.js";
 import viewsRouter from "./views/index.view.js";
 import { Router } from 'express'; // Importa el Router de express
+import winston from "../utils/logger/index.js";
 
 class IndexRouter extends CustomRouter {
   init() {
@@ -54,6 +66,7 @@ class IndexRouter extends CustomRouter {
     });
 
     this.router.get("/complex", (req, res, next) => {
+      winston.INFO(process.pid)
       try {
         let total = 1;
         for (let i = 1; i < 1000000000; i++) {
@@ -83,4 +96,5 @@ class IndexRouter extends CustomRouter {
 }
 
 const router = new IndexRouter();
-export default router.getRouter();*/
+export default router.getRouter();
+*/

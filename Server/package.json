@@ -12,7 +12,9 @@
     "simplex": "artillery quick --count 40 --num 50 'http://localhost:8000/simplex' -o ./test/quick/simplex.json",
     "complex": "artillery quick --count 40 --num 50 'http://localhost:8000/complex' -o ./test/quick/complex.json",
     "performance": "artillery run ./test/flow/flow.yaml --output ./test/flow/flow.json",
-    "report": "artillery report ./test/flow/flow.json"
+    "report": "artillery report ./test/flow/flow.json",
+    "image": "docker build -t danilopenia .",
+    "container": "docker run -p 8000:8000 danilopenia"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +22,7 @@
   "dependencies": {
     "artillery-plugin-metrics-by-endpoint": "^1.5.0",
     "bcrypt": "5.1.1",
+    "cluster": "^0.7.7",
     "commander": "^12.0.0",
     "connect-mongo": "^5.1.0",
     "cookie-parser": "^1.4.6",
@@ -42,6 +45,8 @@
     "passport-local": "1.0.0",
     "session-file-store": "^1.5.0",
     "socket.io": "^4.7.3",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
     "twilio": "^5.0.4",
     "winston": "^3.13.0"
   },

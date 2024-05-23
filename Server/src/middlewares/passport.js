@@ -7,6 +7,7 @@ import repository from "../repositories/users.rep.js";
 
 
 
+
 passport.use(
   "register",
   new LocalStrategy(
@@ -18,7 +19,7 @@ passport.use(
           return done(null, false, { statusCode: 401 });
         } else {
           const user = await repository.create(req.body);
-          console.log(user);
+         
           return done(null, user);
         }
       } catch (error) {

@@ -1,4 +1,4 @@
-console.log("socket");
+winston.INFO("socket");
 
 const socket = io();
 
@@ -28,6 +28,6 @@ document.querySelector("#newOrder").addEventListener("click", (event) => {
   if (user) {
     data.user = user;
   }
- console.log(data);
+ winston.INFO(data);
   socket.emit("new order", data);
 });

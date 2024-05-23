@@ -1,5 +1,5 @@
 
-<div class="d-flex flex-wrap justify-content-evently">
+{{!--<div class="d-flex flex-wrap justify-content-evently">
   {{#each products}}
 <div class="card" style="width: 18rem;">
   <img src="{{this.poster}}" class="card-img-top" alt="...">
@@ -10,6 +10,20 @@
   </div>
 </div>
 {{/each}}
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/real.js"></script>--}}
+<div class="d-flex flex-wrap justify-content-evently">
+  {{#each products}}
+  <div class="card" style="width: 18rem;">
+    <img src="{{this.poster}}" class="card-img-top" alt="{{this.title}}">
+    <div class="card-body">
+      <h5 class="card-title">{{this.title}}</h5>
+      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dignissim</p>
+      <a href="/products/{{this._id}}" class="bbb" target="_blank">Go somewhere</a>
+    </div>
+  </div>
+  {{/each}}
 </div>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/real.js"></script>
