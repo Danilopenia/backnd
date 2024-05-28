@@ -73,3 +73,4 @@ class ProductManager {
   });
   
   winstonLog.INFO(ProdManager.read());
+

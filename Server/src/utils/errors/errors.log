@@ -347,3 +347,116 @@
 [33mWARN[39m: Invalid credentials
 [33mWARN[39m: Invalid credentials
 [33mWARN[39m: Invalid credentials
+[31mERROR[39m: users validation failed: role: Cast to Number failed for value "prem" (type string) at path "role"
+[31mERROR[39m: users validation failed: role: Cast to Number failed for value "prem" (type string) at path "role"
+[31mERROR[39m: users validation failed: role: Cast to Number failed for value "prem" (type string) at path "role"
+[31mERROR[39m: users validation failed: role: Cast to Number failed for value "prem" (type string) at path "role"
+[31mERROR[39m: users validation failed: role: Cast to Number failed for value "prem" (type string) at path "role"
+[33mWARN[39m: POST /api/session/login not found path
+[31mERROR[39m: users validation failed: role: Cast to Number failed for value "prem" (type string) at path "role"
+[33mWARN[39m: POST /api/session/login not found path
+[31mERROR[39m: users validation failed: role: Cast to Number failed for value "prem" (type string) at path "role"
+[33mWARN[39m: POST /api/session/login not found path
+[31mERROR[39m: users validation failed: role: Cast to Number failed for value "prem" (type string) at path "role"
+[33mWARN[39m: POST /api/session/login not found path
+[31mERROR[39m: users validation failed: role: Cast to Number failed for value "prem" (type string) at path "role"
+[33mWARN[39m: POST /api/session/login not found path
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: users validation failed: role: Cast to Number failed for value "prem" (type string) at path "role"
+[33mWARN[39m: POST /api/session/login not found path
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: users validation failed: role: Cast to Number failed for value "PREM" (type string) at path "role"
+[33mWARN[39m: POST /api/session/login not found path
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: users validation failed: role: Cast to Number failed for value "USER" (type string) at path "role"
+[33mWARN[39m: POST /api/session/login not found path
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: users validation failed: role: Cast to Number failed for value "USER" (type string) at path "role"
+[33mWARN[39m: POST /api/session/login not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: POST /api/session/login not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: POST /api/session/login not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: POST /api/session/login not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: POST /api/session/login not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: POST /api/session/login not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: POST /api/session/login not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: POST /api/session/login not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: POST /api/session/login not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: POST /api/session/login not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: POST /api/session/login not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: POST /api/session/login not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: POST /api/session/login not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: POST /api/session/login not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: POST /api/session/login not found path
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: users validation failed: role: Cast to Number failed for value "admin" (type string) at path "role", name: Path `name` is required.
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: users validation failed: role: Cast to Number failed for value "admin" (type string) at path "role", name: Path `name` is required.
+[33mWARN[39m: POST /api/session/login not found path
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: users validation failed: role: Cast to Number failed for value "admin" (type string) at path "role", name: Path `name` is required.
+[33mWARN[39m: POST /api/session/login not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: logger.info is not a function
+[31mERROR[39m: logger.info is not a function
+[31mERROR[39m: logger.info is not a function
+[31mERROR[39m: logger.info is not a function
+[31mERROR[39m: logger.info is not a function
+[31mERROR[39m: logger.info is not a function
+[31mERROR[39m: logger.info is not a function
+[31mERROR[39m: logger.info is not a function
+[31mERROR[39m: logger.info is not a function
+[31mERROR[39m: logger.info is not a function
+[31mERROR[39m: logger.info is not a function
+[31mERROR[39m: logger.info is not a function
+[31mERROR[39m: logger.info is not a function
+[31mERROR[39m: logger.info is not a function
+[31mERROR[39m: logger.info is not a function
+[31mERROR[39m: logger.info is not a function
+[31mERROR[39m: logger.info is not a function
+[31mERROR[39m: winston is not defined
+[31mERROR[39m: winston is not defined
+[31mERROR[39m: winston.INFO is not a function
+[31mERROR[39m: logger.error is not a function
+[31mERROR[39m: logger.error is not a function
+[31mERROR[39m: MENSAJE DE error
+[33mWARN[39m: MENSAJE DE fatal
+[31mERROR[39m: MENSAJE DE error
+[33mWARN[39m: MENSAJE DE fatal
+[31mERROR[39m: MENSAJE DE error
+[33mWARN[39m: MENSAJE DE fatal
+[31mERROR[39m: MENSAJE DE error
+[33mWARN[39m: MENSAJE DE fatal

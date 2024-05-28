@@ -5,6 +5,7 @@ import productsRouter from "./products.router.api.js";
 import ordersRouter from "./orders.router.api.js";
 import sessionsRouter from "./sessions.router.api.js";
 import commentsRouter from "./comments.router.api.js";
+import loggersRouter from "./loggers.router.api.js";
 //import authRouter from "./auth.router.api.js";
 
 class SessionsRouter extends CustomRouter {
@@ -14,6 +15,7 @@ class SessionsRouter extends CustomRouter {
     this.use("/orders", ordersRouter);
     this.use("/sessions", sessionsRouter);
     this.use("/comments", commentsRouter);
+    this.use('/loggers', loggersRouter);
     //this.use("/auth", authRouter);
     }
   }

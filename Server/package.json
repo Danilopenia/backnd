@@ -14,7 +14,10 @@
     "performance": "artillery run ./test/flow/flow.yaml --output ./test/flow/flow.json",
     "report": "artillery report ./test/flow/flow.json",
     "image": "docker build -t danilopenia .",
-    "container": "docker run -p 8000:8000 danilopenia"
+    "container": "docker run -p 8000:8000 danilopenia",
+    "mocha": "mocha ./test/mocha",
+    "chai": "mocha ./test/chai",
+    "super": "mocha ./test/supertest"
   },
   "keywords": [],
   "author": "",
@@ -52,6 +55,9 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
-    "nodemon": "^3.0.2"
+    "chai": "^5.1.1",
+    "mocha": "^10.4.0",
+    "nodemon": "^3.0.2",
+    "supertest": "^7.0.0"
   }
 }
