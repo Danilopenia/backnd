@@ -38,7 +38,9 @@ const ready = () => winstonLog.INFO("server ready on port " + PORT);
 
 
 
-
+server.use(compression ({
+  brotli: { enabled:true, zlib: {} }
+}))
 
 
 //middlewares
@@ -85,13 +87,15 @@ server.use(pathHandler);
 
 
 
-console.log(cluster.isPrimary)
+winstonLog.INFO(cluster.isPrimary)
 if (cluster.isPrimary) {
-  console.log("PRIMARY ID:"+ process.pid);
+  winstonLog.INFO("PRIMARY ID:"+ process.pid);
   const numberOfProcess = cpus().lenght
-  console.log("NUMBER OF PROCESS OF MY COMPUTER: "+ numberOfProcess);
+  winstonLog.INFO("NUMBER OF PROCESS OF MY COMPUTER: "+ numberOfProcess);
+  //for (let i = 1; i <= numberOfProcess; i++) {
   cluster.fork()
+  
 }else{
-  console.log("WORKER ID:"+process.pid);
+  winstonLog.INFO("WORKER ID:"+process.pid);
   server.listen(PORT, ready);
 }

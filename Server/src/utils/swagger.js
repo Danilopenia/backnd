@@ -4,7 +4,7 @@ const options = {
   definition: {
     openapi: "3.0.1",
     info: {
-      title: "ADOPT ME API",
+      title: "POLBRAND",
       description: "documentation of API",
     },
   },

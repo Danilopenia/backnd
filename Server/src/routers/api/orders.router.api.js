@@ -11,7 +11,7 @@ class OrdersRouter extends CustomRouter {
     this.create("/", ["USER", "PREM"], create);
     this.read("/", ["USER", "PREM"], read);
     this.update("/:oid", ["USER", "PREM"], update);
-    this.destroy("/:oid", ["USER", "PREM"], destroy);
+    this.destroy("/:oid", ["USER","ADMIN", "PREM"], destroy);
   }
 }
 

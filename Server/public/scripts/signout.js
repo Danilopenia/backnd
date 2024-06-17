@@ -30,10 +30,16 @@
       document.querySelector(".navbar-nav").removeChild(document.querySelector("#formOrdersButton"))
       document.querySelector(".navbar-nav").removeChild(document.querySelector("#ordersButton"))
       document.querySelector(".navbar-nav").removeChild(document.querySelector("#signout"))
+      document.querySelector(".product").removeChild(document.querySelector(".addTo"))
     }
     if (res.response?.role===0) {
       document.querySelector(".navbar-nav").removeChild(document.querySelector("#formButton"))
+      document.querySelector(".navbar-nav").removeChild(document.querySelector("#formOrdersButton"))
     } else if (res.response?.role===1) {
+      document.querySelector(".navbar-nav").removeChild(document.querySelector("#formOrdersButton"))
+      document.querySelector(".navbar-nav").removeChild(document.querySelector("#formButton"))
+    } else if (res.response?.role===2){
+      document.querySelector("#product").removeChild(document.querySelector(".addToCart"))
       document.querySelector(".navbar-nav").removeChild(document.querySelector("#ordersButton"))
     }
   });

@@ -9,11 +9,11 @@ import {
 
 class ProductsRouter extends CustomRouter {
   init() {
-    this.create("/", ["PUBLIC"], create); ////ESTABA EN PUBLIC
-    this.read("/", ["USER", "PREM"], read);
-    this.read("/:pid", ["USER", "PREM"], readOne);
-    this.update("/:pid", ["USER", "PREM"], update); ///PUBLIC
-    this.destroy("/:pid", ["USER", "PREM"], destroy);//PUBLIC
+    this.create("/", ["ADMIN", "PREM"], create); ////ESTABA EN PUBLIC
+    this.read("/", ["PUBLIC"], read);
+    this.read("/:pid", ["PUBLIC"], readOne);
+    this.update("/:pid", ["PREM", "ADMIN"], update); ///PUBLIC
+    this.destroy("/:pid", ["ADMIN", "PREM"], destroy);//PUBLIC
   }
 }
 

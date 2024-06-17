@@ -9,7 +9,8 @@ function productsMock(id) {
   return {
     title: faker.commerce.product(),
     price: 30,
-    stock: 200
+    stock: 200,
+    category: "remeras"
   };
 }
 export default async function createProduct(id){

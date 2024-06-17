@@ -20,17 +20,17 @@ class ProductsController {
   read = async (req, res, next) => {
     try {
       const options = {
-        limit: req.query.limit || 5,
+        limit: 9, //req.query.limit || 
         page: req.query.page || 1,
-        sort: { title: 1 },
+        sort: { category: 1}, //title: 1 
         lean: true,
       };
       const filter = {};
-      if (req.query.title) {
-        filter.title = new RegExp(req.query.title.trim(), "i");
+      if (req.query.category) {
+        filter.category = new RegExp(req.query.category.trim(), "i"); //los category por title
       }
       if (req.query.sort === "desc") {
-        options.sort.title = "desc";
+        options.sort.category = "desc";
       }
       const response = await this.service.read({ filter, options });
       if (response) {

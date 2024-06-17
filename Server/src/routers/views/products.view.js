@@ -1,36 +1,41 @@
-import { Router } from "express";
-import products from "../../data/mongo/products.mongo.js";
-//import isAdmin from "../../middlewares/isAdmin.mid.js";
-import passCallBack from "../../middlewares/passCallBack.js";
+import CustomRouter from "../CustomRouter.js";
+import products from "../../data/mongo/products.mongo.js"; //!!!!se debe importar desde DAO o Factory en caso de que este como factory
+// import isAdmin from "../../middlewares/isAdmin.mid.js";
+//import winstonLog from "../../utils/logger/index.js"
 
-const productsRouter = Router()
+class ProductsRouter extends CustomRouter {
 
-productsRouter.get("/new", passCallBack("jwt"), /*isAdmin,*/ (req, res, next) => {
-  try {
-    return res.render("new", { title: "CREATE MOVIE" });
-  } catch (error) {
-    next(error);
+
+  init() {
+    this.read("/new", ["PUBLIC"] ,/*isAdmin,*/ (req, res, next) => { //passcalback("jwt")
+      try {
+        return res.render("new", { title: "CREATE MOVIE" });
+      } catch (error) {
+        next(error);
+      }
+    });
+
+    this.read("/form",["PUBLIC"], /*isAdmin,*/ (req, res, next) => { //passcalback("jwt")
+      try {
+        return res.render("form", { title: "CREATE MOVIE" });
+      } catch (error) {
+        next(error);
+      }
+    });
+
+    this.read("/:pid",["PUBLIC"], async (req, res, next) => {
+      try {
+        const { pid } = req.params;
+        const one = await products.readOne(pid);
+        console.log(one);
+        return res.render("products", { product: one, category: one.category.toUpperCase() });
+      } catch (error) {
+        next(error);
+      }
+    });
   }
-});
+}
 
+const productsRouter = new ProductsRouter();
 
-productsRouter.get("/form", passCallBack("jwt"), /*isAdmin,*/ (req, res, next) => {
-  try {
-    return res.ren("form", { title: "CREATE MOVIE" });
-  } catch (error) {
-    next(error);
-  }
-});
-
-productsRouter.get("/:pid", async (req, res, next) => {
-  try {
-    const { pid } = req.params;
-    const one = await products.readOne(pid);
-    return res.render("detail", { product: one, title: one.title.toUpperCase() });
-  } catch (error) {
-    next(error);
-  }
-});
-
-
-export default productsRouter
+export default productsRouter.getRouter();

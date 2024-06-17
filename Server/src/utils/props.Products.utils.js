@@ -1,7 +1,7 @@
 function propsProductsUtils(data) {
-    const { title, price } = data;
-    if (!title || !price) {
-      const error = new Error("name & lastname are required");
+    const { title, price, category } = data;
+    if (!title || !price || !category) {
+      const error = new Error("title, price & category are required");
       error.statusCode = 404;
       throw error;
     }

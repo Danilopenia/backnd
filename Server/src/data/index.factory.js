@@ -24,8 +24,7 @@ switch (environment) {
     const { default: productsFs } = await import("./fs/products.fs.js")
     const { default: usersFs } = await import("./fs/users.fs.js")
     const { default: ordersFs } = await import("./fs/orders.fs.js")
-    const { default: commentsFs } = await import("./fs/comments.fs.js")
-    dao = { products: productsFs, users: usersFs, orders: ordersFs, comments: commentsFs }
+    dao = { products: productsFs, users: usersFs, orders: ordersFs}
     break;
   case "prod":
     //vamos a usar MONGO
@@ -35,8 +34,7 @@ switch (environment) {
     const { default: productsMongo } = await import("./mongo/products.mongo.js")
     const { default: usersMongo } = await import("./mongo/users.mongo.js")
     const { default: ordersMongo } = await import("./mongo/orders.mongo.js")
-    const { default: commentsMongo } = await import("./mongo/comments.mongo.js")
-    dao = { products: productsMongo, users: usersMongo, orders: ordersMongo, comments: commentsMongo }
+    dao = { products: productsMongo, users: usersMongo, orders: ordersMongo}
     break;
   default:
     break;
