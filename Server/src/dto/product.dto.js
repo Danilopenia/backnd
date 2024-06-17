@@ -9,6 +9,7 @@ class ProductDTO {
     this.poster = data.poster || "https://i.postimg.cc/HxdvTwqJ/events.jpg"
     this.price = data.price || 10;
     this.stock = data.stock || 50;
+    this.category = data.category || "varios"
     this.date = data.date || new Date();
     argsUtil.env !== "MONGO" && (this.updatedAt = new Date()); // argsUtil.env !== "prod" && (this.updatedAt = new Date());
     argsUtil.env !== "MONGO" && (this.createdAt = new Date()); // argsUtil.env !== "prod" && (this.createdAt = new Date());

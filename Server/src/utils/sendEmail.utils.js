@@ -1,8 +1,9 @@
 import { createTransport } from "nodemailer";
 
+
 async function sendEmail(data) {
   try {
-    console.log(data);
+    //console.log(data);
     const transport = createTransport({
       service: "gmail",
       port: process.env.PORT, //process.env.port clase 30 min 10

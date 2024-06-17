@@ -1,5 +1,21 @@
-components: 
+components:
   schemas:
+    User:
+      type: object
+      properties:
+        name:
+          type: string
+          description: name of the user
+        email:
+          type: string
+          description: email of the user
+        password:
+          type: string
+          description: password to log the user
+      example:
+        name: gabriel
+        email: gabriela@coder.com
+        password: hola1234
     Register:
       type: object
       properties:
@@ -14,6 +30,30 @@ components:
           description: password to log the user
       example:
         name: gabriel
+        email: gabriela@coder.com
+        password: hola1234
+    Verify:
+      type: object
+      properties:
+        email:
+          type: string
+          description: email of the user
+        verificationCode:
+          type: string
+          description: verification code sent to the user
+      example:
+        email: gabriela@coder.com
+        verificationCode: 123456
+    Login:
+      type: object
+      properties:
+        email:
+          type: string
+          description: email of the user
+        password:
+          type: string
+          description: password to log the user
+      example:
         email: gabriela@coder.com
         password: hola1234
   responses:
@@ -39,8 +79,80 @@ components:
           statusCode: 201
           response: Registered
     res400:
+      type: object
+      properties:
+        statusCode:
+          type: number
+          description: code of the error 
+        url: 
+          type: string
+          description: the url where the error is
+        message:
+          type: string
+          description: description of the error
+      example:
+        statusCode: 400
+        url: 'POST /api/sessions'
+        message: 'users validation failed'
     res401:
-    res500:
+      type: object
+      properties:
+        statusCode:
+          type: string
+          description: code of the error
+        url:
+          type: string
+          description: the url where the error is
+        message:
+          type: string
+          description: description of the error
+      example:
+        statusCode: 401
+        url: 'POST /api/sessions'
+        message: 'sessions validation failed: No auth!'
+    res403:
+      type: object
+      properties:
+        statusCode:
+          type: number
+          description: code of the error
+        url:
+          type: string
+          description: the url where the error is
+        message:
+          type: string
+          description: description of the error
+      example:
+        statusCode: 403
+        url: 'POST /api/users'
+        message: 'Forbidden'
+    res200:
+      type: object
+      properties:
+        status:
+          type: string
+          description: successful code
+        payload:
+          type: array
+          items:
+            type: object
+            properties:
+              _id:
+                type: string
+              name:
+                type: string
+              email:
+                type: string
+          description: List of users
+      example:
+        status: success
+        payload:
+          - _id: 123456
+            name: gabriel
+            email: gabriela@coder.com
+          - _id: 7891011
+            name: john
+            email: john@coder.com
 paths:
   /api/sessions/register:
     post:
@@ -61,3 +173,189 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/responses/res201'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/res400'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/res401'
+  /api/sessions/verify:
+    post:   
+      summary: To verify a user
+      tags:
+        - sessions
+      requestBody:
+        required: true
+        description: data of verification
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Verify'
+      responses:
+        '201': 
+          description: Successful verification
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/res201'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/res400'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/res401'
+  /api/sessions/login:
+    post:
+      summary: To login
+      tags:
+        - sessions
+      requestBody:
+        required: true
+        description: access to your own account
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Login'
+      responses:
+        '201': 
+          description: Successful login
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/res201'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/res400'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/res401'
+  /api/users:
+    post:
+      summary: Create a user
+      tags:
+        - User
+      security: 
+        - cookieAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '201':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/res201'
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/res400'
+        '401':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/res401'
+        '403':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/res403'
+    get:
+      summary: Retrieve a list of users
+      tags:
+        - User
+      parameters:
+        - in: query
+          name: name
+          schema:
+            type: string
+          description: Filter users by name
+        - in: query
+          name: email
+          schema:
+            type: string
+          description: Filter users by email
+      responses:
+        '200':
+          description: A list of users
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/res200'
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+    put:
+      summary: Update a user
+      tags:
+        - User
+      parameters:
+        - in: query
+          name: id
+          schema:
+            type: string
+          description: ID of the user to update
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: User not found
+    delete:
+      summary: Delete a user
+      tags:
+        - User
+      parameters:
+        - in: query
+          name: id
+          schema:
+            type: string
+          description: ID of the user to delete
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: User not found

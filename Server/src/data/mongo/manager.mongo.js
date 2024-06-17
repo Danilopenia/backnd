@@ -64,18 +64,9 @@ class MongoManager {
       throw error;
     }
   }
-  /*async readOne(id) {
-    try {
-      const one = await this.model.findById(id).lean();
-      CustomError.new(errors.notFound);
-      return one;
-    } catch (error) {
-      throw error;
-    }
-  }*/
   async readOne(id) {
     try {
-      const one = await this.model.findById(id);
+      const one = await this.model.findById(id).lean();
       return one;
     } catch (error) {
       CustomError.new(errors.notFound);

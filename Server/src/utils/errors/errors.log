@@ -460,3 +460,490 @@
 [33mWARN[39m: MENSAJE DE fatal
 [31mERROR[39m: MENSAJE DE error
 [33mWARN[39m: MENSAJE DE fatal
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: POST /api/products/create not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /apple-touch-icon-precomposed.png not found path
+[33mWARN[39m: GET /apple-touch-icon.png not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: POST /api/payments/checkout not found path
+[33mWARN[39m: POST /api/payments/checkout not found path
+[33mWARN[39m: POST /api/payments/checkout not found path
+[33mWARN[39m: POST /api/payments/checkout not found path
+[33mWARN[39m: POST /api/payments/checkout not found path
+[33mWARN[39m: POST /api/payments/checkout not found path
+[33mWARN[39m: POST /api/payments/checkout not found path
+[33mWARN[39m: POST /api/payments/checkout not found path
+[33mWARN[39m: POST /api/payments/checkout not found path
+[33mWARN[39m: POST /api/payments/checkout not found path
+[31mERROR[39m: Cannot destructure property 'user_id' of 'req.user' as it is undefined.
+[31mERROR[39m: Cannot destructure property 'user_id' of 'req.session' as it is undefined.
+[33mWARN[39m: Received unknown parameter: succes_url. Did you mean success_url?
+[31mERROR[39m: _id is not defined
+[31mERROR[39m: _id is not defined
+[33mWARN[39m: GET /api/payments/checkout not found path
+[33mWARN[39m: GET /thanks.html not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: GET /favicon.ico not found path
+[31mERROR[39m: Failed to lookup view "detail" in views directory "/Users/danilopenia/Desktop/Backend-entregable-clase9/Server/src/views"
+[31mERROR[39m: (depth0 || container.hooks.helperMissing).call is not a function
+[31mERROR[39m: (depth0 || container.hooks.helperMissing).call is not a function
+[31mERROR[39m: Failed to lookup view "detail" in views directory "/Users/danilopenia/Desktop/Backend-entregable-clase9/Server/src/views"
+[31mERROR[39m: Failed to lookup view "detail" in views directory "/Users/danilopenia/Desktop/Backend-entregable-clase9/Server/src/views"
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: Cannot read properties of null (reading 'password')
+[31mERROR[39m: Cannot read properties of null (reading 'password')
+[31mERROR[39m: Failed to lookup view "detail" in views directory "/Users/danilopenia/Desktop/Backend-entregable-clase9/Server/src/views"
+[31mERROR[39m: Failed to lookup view "detail" in views directory "/Users/danilopenia/Desktop/Backend-entregable-clase9/Server/src/views"
+[31mERROR[39m: Failed to lookup view "detail" in views directory "/Users/danilopenia/Desktop/Backend-entregable-clase9/Server/src/views"
+[31mERROR[39m: Failed to lookup view "product" in views directory "/Users/danilopenia/Desktop/Backend-entregable-clase9/Server/src/views"
+[31mERROR[39m: Failed to lookup view "product" in views directory "/Users/danilopenia/Desktop/Backend-entregable-clase9/Server/src/views"
+[31mERROR[39m: Failed to lookup view ":pid" in views directory "/Users/danilopenia/Desktop/Backend-entregable-clase9/Server/src/views"
+[33mWARN[39m: GET /products/5f84060ff03953dd7c2695a9 not found path
+[33mWARN[39m: GET /products/5f84060ff03953dd7c2695a9 not found path
+[33mWARN[39m: GET /products/5f84060ff03953dd7c2695a9 not found path
+[33mWARN[39m: GET /products/5f84060ff03953dd7c2695a9 not found path
+[33mWARN[39m: GET /products/5f84060ff03953dd7c2695a9 not found path
+[33mWARN[39m: GET /products/bb829d9a8d3c25bb65a31a3d not found path
+[33mWARN[39m: GET /products/new not found path
+[33mWARN[39m: GET /products/new not found path
+[33mWARN[39m: GET /products/new not found path
+[33mWARN[39m: GET /products/new not found path
+[33mWARN[39m: GET /products/5f84060ff03953dd7c2695a9 not found path
+[33mWARN[39m: GET /products/new not found path
+[33mWARN[39m: GET / not found path
+[33mWARN[39m: GET / not found path
+[33mWARN[39m: GET / not found path
+[33mWARN[39m: GET / not found path
+[31mERROR[39m: products is not defined
+[31mERROR[39m: products is not defined
+[33mWARN[39m: GET /socket.io/socket.io.js not found path
+[31mERROR[39m: Parse error on line 34:
+...le}}</h5>      </a>
+----------------------^
+Expecting 'OPEN_INVERSE_CHAIN', 'INVERSE', 'OPEN_ENDBLOCK', got 'EOF'
+[31mERROR[39m: Parse error on line 34:
+...              </a>
+---------------------^
+Expecting 'OPEN_INVERSE_CHAIN', 'INVERSE', 'OPEN_ENDBLOCK', got 'EOF'
+[31mERROR[39m: Parse error on line 34:
+...le}}</h5>      </a>
+----------------------^
+Expecting 'OPEN_INVERSE_CHAIN', 'INVERSE', 'OPEN_ENDBLOCK', got 'EOF'
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: jwt expired
+[33mWARN[39m: GET /api/payments/checkout not found path
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: GET /apple-touch-icon-precomposed.png not found path
+[33mWARN[39m: GET /apple-touch-icon.png not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: orders validation failed: product_id: Path `product_id` is required.
+[31mERROR[39m: this.model.paginate(...).lean is not a function
+[31mERROR[39m: Parse error on line 45:
+.../if}}    </span>  {{/if}}</main><scr
+---------------------^
+Expecting 'EOF', got 'OPEN_ENDBLOCK'
+[31mERROR[39m: jwt expired
+[31mERROR[39m: read ECONNRESET
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[31mERROR[39m: jwt expired
+[33mWARN[39m: GET /favicon.ico not found path
+[31mERROR[39m: jwt expired
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: invalid Id
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[31mERROR[39m: jwt expired
+[33mWARN[39m: GET /apple-touch-icon-precomposed.png not found path
+[33mWARN[39m: GET /apple-touch-icon.png not found path
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: GET /form not found path
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: GET /style='width: not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: GET /style='width: not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: GET /style='width: not found path
+[33mWARN[39m: GET /style='width: not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: GET /style='width: not found path
+[33mWARN[39m: GET /style='width: not found path
+[33mWARN[39m: GET /style='width: not found path
+[33mWARN[39m: GET /style='width: not found path
+[33mWARN[39m: GET /style='width: not found path
+[33mWARN[39m: GET /style='width: not found path
+[33mWARN[39m: GET /style='width: not found path
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: GET /style='width: not found path
+[33mWARN[39m: GET /style='width: not found path
+[33mWARN[39m: GET /thanks.html not found path
+[33mWARN[39m: GET /style='width: not found path
+[33mWARN[39m: GET /style='width: not found path
+[33mWARN[39m: GET /style='width: not found path
+[33mWARN[39m: GET /style='width: not found path
+[31mERROR[39m: productsOnCart.map is not a function
+[31mERROR[39m: productsOnCart.map is not a function
+[31mERROR[39m: productsOnCart.map is not a function
+[31mERROR[39m: productsOnCart is not an array
+[31mERROR[39m: Cannot read properties of undefined (reading 'title')
+[31mERROR[39m: Cannot read properties of undefined (reading 'title')
+[31mERROR[39m: Cannot read properties of undefined (reading 'title')
+[31mERROR[39m: Cannot read properties of undefined (reading '_id')
+[31mERROR[39m: Cannot read properties of undefined (reading '_id')
+[31mERROR[39m: Cannot read properties of undefined (reading 'title')
+[31mERROR[39m: Cannot read properties of undefined (reading 'title')
+[31mERROR[39m: Cannot read properties of undefined (reading 'price')
+[31mERROR[39m: productsOnCart.map is not a function
+[31mERROR[39m: productsOnCart.map is not a function
+[31mERROR[39m: Cannot read properties of undefined (reading 'title')
+[31mERROR[39m: Cannot read properties of null (reading 'title')
+[31mERROR[39m: Cannot read properties of null (reading 'title')
+[31mERROR[39m: Cannot read properties of null (reading 'title')
+[31mERROR[39m: Cannot read properties of null (reading 'title')
+[31mERROR[39m: Cannot read properties of null (reading 'title')
+[31mERROR[39m: Cannot read properties of null (reading 'title')
+[31mERROR[39m: Cannot read properties of null (reading 'title')
+[31mERROR[39m: Cannot read properties of null (reading 'title')
+[31mERROR[39m: Cannot read properties of null (reading 'title')
+[31mERROR[39m: Cannot read properties of null (reading 'title')
+[31mERROR[39m: Cannot read properties of null (reading 'title')
+[31mERROR[39m: Cannot read properties of null (reading 'title')
+[31mERROR[39m: Cannot read properties of null (reading 'title')
+[33mWARN[39m: GET /style='width: not found path
+[33mWARN[39m: GET /style='width: not found path
+[33mWARN[39m: GET /scripts/pagas.js not found path
+[33mWARN[39m: POST /api/orders/checkout not found path
+[33mWARN[39m: GET /api/payments/checkout not found path
+[33mWARN[39m: GET /api/payments/checkout not found path
+[33mWARN[39m: GET /api/payments/checkout not found path
+[33mWARN[39m: GET /thanks.html not found path
+[33mWARN[39m: GET /thanks.html not found path
+[33mWARN[39m: GET /thanks.html not found path
+[33mWARN[39m: GET /thanks.handlebars not found path
+[33mWARN[39m: GET /thanks.html not found path
+[33mWARN[39m: GET /thanks.handlebars not found path
+[33mWARN[39m: GET /views/thanks.handlebars not found path
+[33mWARN[39m: GET /thanks.html not found path
+[33mWARN[39m: GET /thanks not found path
+[33mWARN[39m: GET /style='width: not found path
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Forbidden
+[33mWARN[39m: GET /style='width: not found path
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[31mERROR[39m: jwt expired
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /apple-touch-icon-precomposed.png not found path
+[33mWARN[39m: GET /apple-touch-icon.png not found path
+[31mERROR[39m: jwt expired
+[33mWARN[39m: GET /style='width: not found path
+[33mWARN[39m: GET /[object not found path
+[33mWARN[39m: GET /[object not found path
+[33mWARN[39m: GET /[object not found path
+[33mWARN[39m: GET /[object not found path
+[33mWARN[39m: GET /[object not found path
+[33mWARN[39m: GET /[object not found path
+[33mWARN[39m: GET /[object not found path
+[33mWARN[39m: GET /[object not found path
+[33mWARN[39m: GET /[object not found path
+[33mWARN[39m: GET /[object not found path
+[33mWARN[39m: GET /[object not found path
+[33mWARN[39m: GET /[object not found path
+[31mERROR[39m: winstonLog is not defined
+[31mERROR[39m: winstonLog is not defined
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: GET /'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAZlJREFUaEPtWTFOw0AQnO0RSPCEmIoWp4CUmAKQ+A0FD8iHECDFlCQFTgtNwhMAIR6wCKEgy4q1d3t3sSzW7e7s7szcybKX0POHej4/jEDXDgY5sDg8uSSiKwAHAHY8yXwCeCbi8eDp4dYT+5euJvA6PL1g5htt4zqOGOeDeXmnqaUmsMyLKYAjTdM1mFlWlceaWnoCw+ILjC1N0yaGgff9qtzT1NITyAuuN8yq0qvWMhC/6u3VtD5w6ACheCMQqmAoXnSg2UBzwWJi2u5Y6x0wAjHlB/D/HGgKGOvStRmjre/8HtA2cD1J2vpGwFVhKa9zB6QBQuNtAkQ7QqEDSngjICmUOm4OpFZYqm8OSAqljpsDqRWW6psDkkKp4+ZAaoWl+uaApFDqeHIHpA8WKS4JYAS0CknKr+La+tG+yFwH7ey3yiIv3gjYDR3UBe+z8PBx4BGAag3kMnQjZ5pV5cgF50wg5lJPHIzpLJtP7sU8wG/R/UsC1wD/rFW3XRp45HwAeCHG2Gdj6eyAxyAbTTUCG5V7TbPeO/AN+v+sQEsryjsAAAAASUVORK5CYII=' not found path
+[33mWARN[39m: GET /'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAZlJREFUaEPtWTFOw0AQnO0RSPCEmIoWp4CUmAKQ+A0FD8iHECDFlCQFTgtNwhMAIR6wCKEgy4q1d3t3sSzW7e7s7szcybKX0POHej4/jEDXDgY5sDg8uSSiKwAHAHY8yXwCeCbi8eDp4dYT+5euJvA6PL1g5htt4zqOGOeDeXmnqaUmsMyLKYAjTdM1mFlWlceaWnoCw+ILjC1N0yaGgff9qtzT1NITyAuuN8yq0qvWMhC/6u3VtD5w6ACheCMQqmAoXnSg2UBzwWJi2u5Y6x0wAjHlB/D/HGgKGOvStRmjre/8HtA2cD1J2vpGwFVhKa9zB6QBQuNtAkQ7QqEDSngjICmUOm4OpFZYqm8OSAqljpsDqRWW6psDkkKp4+ZAaoWl+uaApFDqeHIHpA8WKS4JYAS0CknKr+La+tG+yFwH7ey3yiIv3gjYDR3UBe+z8PBx4BGAag3kMnQjZ5pV5cgF50wg5lJPHIzpLJtP7sU8wG/R/UsC1wD/rFW3XRp45HwAeCHG2Gdj6eyAxyAbTTUCG5V7TbPeO/AN+v+sQEsryjsAAAAASUVORK5CYII=' not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: DELETE /api/orders/ not found path
+[33mWARN[39m: POST /api/auth not found path
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: Cannot read properties of null (reading 'password')
+[31mERROR[39m: Cannot read properties of null (reading 'password')
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: Cannot read properties of null (reading 'verifiedCode')
+[31mERROR[39m: Cannot read properties of null (reading 'verifiedCode')
+[31mERROR[39m: Cannot read properties of null (reading 'verifiedCode')
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: Cannot read properties of null (reading 'verifiedCode')
+[31mERROR[39m: Cannot read properties of null (reading 'verifiedCode')
+[31mERROR[39m: Cannot read properties of null (reading 'verifiedCode')
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Forbidden
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[33mWARN[39m: GET /api/payments/checkout not found path
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[31mERROR[39m: jwt expired
+[33mWARN[39m: GET /api/orders/f21d29be56c74d271ca3b504 not found path
+[31mERROR[39m: jwt expired
+[31mERROR[39m: Cannot read properties of null (reading 'password')
+[31mERROR[39m: Cannot read properties of null (reading 'password')
+[31mERROR[39m: jwt expired
+[33mWARN[39m: GET /api/orders/50bbb126c0f70b93c776a3e6 not found path
+[33mWARN[39m: GET /api/orders/50bbb126c0f70b93c776a3e6 not found path
+[33mWARN[39m: GET /api/orders/50bbb126c0f70b93c776a3e6 not found path
+[33mWARN[39m: Not Found
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Not Found
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: invalid Id
+[33mWARN[39m: GET /api/orders/49bfa044d62e4624631110a9 not found path
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Forbidden
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: [object Object]
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials

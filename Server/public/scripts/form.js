@@ -4,6 +4,8 @@ selector.addEventListener("click", async () => {
     const data = {
       title: document.querySelector("#title").value
     };
+    document.querySelector("#category").value && 
+    (data.category = document.querySelector("#category").value)
     document.querySelector("#photo").value &&
       (data.photo = document.querySelector("#photo").value);
     document.querySelector("#price").value &&

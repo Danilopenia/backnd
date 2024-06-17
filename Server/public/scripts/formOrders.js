@@ -2,12 +2,12 @@ const selector = document.querySelector("#create");
 selector.addEventListener("click", async () => {
   try {
     const data = {
-      product: document.querySelector("#product").value
+      product_id: document.querySelector("#productId").value
     };
-    document.querySelector("#cuantity").value &&
-      (data.cuantity = document.querySelector("#cuantity").value);
-    document.querySelector("#user").value &&
-      (data.user = document.querySelector("#user").value);
+    document.querySelector("#userId").value &&
+      (data.user_id = document.querySelector("#userId").value);
+    document.querySelector("#userId").value &&
+      (data.quantity = document.querySelector("#quantity").value);
     const opts = {
       method: "POST",
       headers: { "Content-Type": "application/json" },

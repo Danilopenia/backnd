@@ -1,3 +1,4 @@
+import winstonLog from "../utils/logger/index.js";
 const sum = (...nums) => {
     if (nums.length===0) return 0;
     if(nums.some(each=> typeof each !=="number")) return null

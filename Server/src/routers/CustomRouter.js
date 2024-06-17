@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import dao from "../data/index.factory.js";
 import errors from "../utils/errors/errors.js";
 import CustomError from "../utils/errors/CustomError.js";
+import winstonLog from "../utils/logger/index.js";
 const { users } = dao;
 
 export default class CustomRouter {
@@ -60,7 +61,7 @@ export default class CustomRouter {
             const user = await users.readByEmail(email);
             req.user = user;
 
-           console.log(data);
+            winstonLog.INFO(data);
 
             return next();
           } else return res.error403();

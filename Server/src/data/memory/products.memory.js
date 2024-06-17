@@ -5,12 +5,13 @@ class ProductManager {
   
     id;
     title;
+    category;
     poster;
     price;
     stock;
   
     create(data) {
-      const propsList = ["title", "poster", "price", "stock"];
+      const propsList = ["title","category", "poster", "price", "stock"];
       const keyList = Object.keys(data);
   
       const missingProps = [];

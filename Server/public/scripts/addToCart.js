@@ -1,7 +1,7 @@
 const selector = document.querySelector(".addToCart");
 selector.addEventListener("click", async (event) => {
   try {
-    const data = { product_id: product.target.id };
+    const data = { product_id: event.target.id };
     const opts = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -14,5 +14,4 @@ selector.addEventListener("click", async (event) => {
     else location.replace("/orders");
   } catch (error) {
     alert(error.message);
-  }
-});
+  }});

@@ -1,5 +1,5 @@
 import repository from "../repositories/products.rep.js";
-import winstonLog from "../utils/logger/index.js";
+//import winstonLog from "../utils/logger/index.js"
 
 
 
@@ -17,7 +17,7 @@ class ProductsService {
   };
   read = async ({ filter, options }) => {
     try {
-      winstonLog.INFO(this.model);
+      console.log(this.model);
       const response = await this.repository.read({ filter, options });
       return response;
     } catch (error) {
